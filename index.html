@@ -1033,9 +1033,9 @@ document.addEventListener('click',e=>{
     const data={};
     new FormData(form).forEach((v,k)=>{data[k]=v;});
     try{
-      await fetch('https://formsubmit.co/ajax/info@taskwise.sg',{
+      await fetch('/submit',{
         method:'POST',
-        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        headers:{'Content-Type':'application/json'},
         body:JSON.stringify(data)
       });
     }catch(_){}
