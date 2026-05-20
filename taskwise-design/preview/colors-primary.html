@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Primary palette</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .swatch { display: flex; flex-direction: column; gap: 8px; }
+  .swatch .chip { aspect-ratio: 1.2; border-radius: 16px; border: 1px solid var(--color-border); display: flex; align-items: flex-end; padding: 12px; box-shadow: var(--shadow-sm); }
+  .swatch .chip.dark { color: var(--color-text-inverse); }
+  .swatch .name { font-family: var(--font-display); font-weight: 600; font-size: 14px; color: var(--color-text); }
+  .swatch .hex { font-family: var(--font-mono); font-size: 12px; color: var(--color-text-muted); }
+</style></head>
+<body><div class="card">
+  <div class="swatches">
+    <div class="swatch"><div class="chip dark" style="background:#2A2F88"><span style="font-weight:600;font-size:12px;font-family:var(--font-mono)">darker</span></div><div class="name">Primary Darker</div><div class="hex">#2A2F88</div></div>
+    <div class="swatch"><div class="chip dark" style="background:#363CA8"><span style="font-weight:600;font-size:12px;font-family:var(--font-mono)">dark</span></div><div class="name">Primary Dark</div><div class="hex">#363CA8</div></div>
+    <div class="swatch"><div class="chip dark" style="background:#4B52CC"><span style="font-weight:600;font-size:12px;font-family:var(--font-mono)">base</span></div><div class="name">Primary</div><div class="hex">#4B52CC</div></div>
+    <div class="swatch"><div class="chip dark" style="background:#7077DC"><span style="font-weight:600;font-size:12px;font-family:var(--font-mono)">light</span></div><div class="name">Primary Light</div><div class="hex">#7077DC</div></div>
+    <div class="swatch"><div class="chip" style="background:#EEF0FB;color:#4B52CC"><span style="font-weight:600;font-size:12px;font-family:var(--font-mono)">tint 50</span></div><div class="name">Primary 50</div><div class="hex">#EEF0FB</div></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;color:var(--color-text-muted);font-size:13px;line-height:1.5;border-top:1px solid var(--color-divider);padding-top:16px">
+    Warm periwinkle indigo — distinctive, trustworthy, deliberately not teal. The brand's anchor color.
+  </div>
+</div></body></html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Feature card</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .feat { background: white; border: 1px solid var(--color-border); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-md); display: flex; flex-direction: column; gap: 14px; flex: 1; transition: all 220ms var(--ease-out); }
+  .feat:hover { box-shadow: var(--shadow-lg); border-color: rgba(75,82,204,0.18); }
+  .feat .icon { width: 48px; height: 48px; border-radius: 14px; background: var(--color-primary-50); display: grid; place-items: center; color: var(--color-primary); }
+  .feat h4 { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--color-text); margin: 0; }
+  .feat p { font-size: 14px; line-height: 1.6; color: var(--color-text-body); margin: 0; }
+  .row { display: flex; gap: 16px; }
+</style></head>
+<body><div class="card">
+  <div class="row">
+    <div class="feat">
+      <div class="icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M8 13h8M8 17h5"/></svg>
+      </div>
+      <h4>Invoice automation</h4>
+      <p>Generate, send, and reconcile invoices against your ERP — without writing a single script.</p>
+    </div>
+    <div class="feat">
+      <div class="icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/></svg>
+      </div>
+      <h4>OCR verification</h4>
+      <p>Extract fields from crumpled receipts, blurry photos, multi-page PDFs — and validate against your records.</p>
+    </div>
+    <div class="feat">
+      <div class="icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="6" x="5" y="3" rx="2"/><path d="M5 14h4M5 17h4M5 11h4"/><circle cx="16" cy="14" r="2"/><circle cx="16" cy="18" r="2"/></svg>
+      </div>
+      <h4>180+ connectors</h4>
+      <p>CRMs, accounting platforms, storage, messaging — TaskWise plugs into the stack you already run.</p>
+    </div>
+  </div>
+</div></body></html>

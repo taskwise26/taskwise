@@ -1,0 +1,277 @@
+/* =============================================================
+ * TaskWise — Design Tokens
+ * Single source of truth for color, typography, spacing,
+ * radius, shadow, and motion. Import this on every page.
+ * ============================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Manrope:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ---------- Color: brand ---------- */
+  --color-primary:        #4B52CC;   /* warm periwinkle indigo — distinctive, trustworthy */
+  --color-primary-dark:   #363CA8;   /* hover / pressed */
+  --color-primary-darker: #2A2F88;   /* type-on-light fallback */
+  --color-primary-light:  #7077DC;
+  --color-primary-50:     #EEF0FB;   /* tinted surface, icon container */
+  --color-primary-100:    #DDE0F6;
+  --color-primary-200:    #BEC3ED;
+
+  --color-accent:         #F2A93B;   /* warm amber — single vibrant accent */
+  --color-accent-dark:    #D88F1F;
+  --color-accent-50:      #FDF4E1;
+  --color-accent-100:     #FAE4B5;
+
+  /* ---------- Color: warm neutrals ---------- */
+  --color-bg:             #FBFAF7;   /* page background — warm off-white */
+  --color-bg-alt:         #F5F3EE;   /* alternating section / muted card */
+  --color-surface:        #FFFFFF;   /* card */
+  --color-surface-sunken: #F9F7F2;   /* nested card / input */
+
+  --color-border:         #E8E4DC;   /* warm hairline */
+  --color-border-strong:  #D6D1C5;   /* form input border */
+  --color-divider:        #EFECE5;
+
+  --color-charcoal:       #1B1D2E;   /* dark CTA section, footer */
+  --color-charcoal-soft:  #2A2D44;
+
+  /* ---------- Color: text ---------- */
+  --color-text:           #1B1D2E;   /* headings */
+  --color-text-body:      #4A4D63;   /* body */
+  --color-text-muted:     #8B8DA0;   /* caption / meta */
+  --color-text-faint:     #B8B9C7;   /* placeholder */
+  --color-text-inverse:   #FBFAF7;   /* on dark */
+
+  /* ---------- Color: semantic ---------- */
+  --color-success:        #3E9B6E;
+  --color-success-50:     #E6F3EC;
+  --color-warning:        #E6A23C;
+  --color-warning-50:     #FBF1DD;
+  --color-error:          #D85959;
+  --color-error-50:       #F9E5E5;
+  --color-info:           #4B52CC;
+  --color-info-50:        #EEF0FB;
+
+  /* ---------- Typography: families ---------- */
+  --font-display: 'Bricolage Grotesque', 'Manrope', system-ui, sans-serif;
+  --font-body:    'Manrope', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ---------- Typography: scale ---------- */
+  /* All sizes use clamp() for responsive scaling */
+  --text-hero:    clamp(3rem, 5vw + 1rem, 4.5rem);     /* 48–72px H1 hero */
+  --text-h1:      clamp(2.25rem, 3vw + 1rem, 3.25rem); /* 36–52px H1 */
+  --text-h2:      clamp(1.875rem, 2vw + 1rem, 2.5rem); /* 30–40px H2 */
+  --text-h3:      clamp(1.5rem, 1vw + 1rem, 1.875rem); /* 24–30px H3 */
+  --text-h4:      1.25rem;    /* 20px H4 */
+  --text-h5:      1.125rem;   /* 18px H5 */
+  --text-h6:      1rem;       /* 16px H6 */
+  --text-lg:      1.125rem;   /* 18px — large body, subhead */
+  --text-base:    1rem;       /* 16px body */
+  --text-sm:      0.9375rem;  /* 15px */
+  --text-xs:      0.8125rem;  /* 13px caption */
+  --text-2xs:     0.6875rem;  /* 11px label */
+
+  --leading-tight:   1.1;
+  --leading-snug:    1.25;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-tight:  -0.02em;
+  --tracking-snug:   -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-label:  0.08em;
+
+  /* ---------- Spacing (8px base) ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  32px;
+  --space-8:  40px;
+  --space-9:  56px;
+  --space-10: 72px;
+  --space-11: 96px;
+  --space-12: 128px;
+
+  /* ---------- Radii ---------- */
+  --radius-xs:   6px;
+  --radius-sm:   8px;
+  --radius-md:   12px;   /* buttons, inputs */
+  --radius-lg:   20px;   /* cards */
+  --radius-xl:   28px;   /* hero panels, large surfaces */
+  --radius-2xl:  36px;
+  --radius-full: 9999px;
+
+  /* ---------- Shadows (warm-tinted, not pure black) ---------- */
+  --shadow-xs: 0 1px 2px rgba(27, 29, 46, 0.04);
+  --shadow-sm: 0 1px 2px rgba(27, 29, 46, 0.04), 0 1px 1px rgba(27, 29, 46, 0.03);
+  --shadow-md: 0 4px 14px -4px rgba(27, 29, 46, 0.06), 0 2px 4px rgba(27, 29, 46, 0.04);
+  --shadow-lg: 0 24px 48px -16px rgba(27, 29, 46, 0.10), 0 8px 16px -8px rgba(27, 29, 46, 0.06);
+  --shadow-xl: 0 32px 64px -24px rgba(27, 29, 46, 0.14), 0 16px 32px -16px rgba(27, 29, 46, 0.08);
+  --shadow-primary: 0 8px 24px -8px rgba(75, 82, 204, 0.32);
+  --shadow-inner:   inset 0 1px 2px rgba(27, 29, 46, 0.05);
+
+  /* ---------- Motion ---------- */
+  --ease-out:    cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-linear: linear;
+
+  --dur-fast:  150ms;
+  --dur-base:  220ms;
+  --dur-slow:  320ms;
+  --dur-slower: 500ms;
+
+  /* ---------- Layout ---------- */
+  --container-max: 1200px;
+  --nav-height:    72px;
+}
+
+/* =============================================================
+ * Reset + Base
+ * ============================================================= */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-body);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* =============================================================
+ * Semantic typography
+ * Use these classes — they wire size + family + weight + tracking + color.
+ * ============================================================= */
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .display, .hero-title {
+  font-family: var(--font-display);
+  color: var(--color-text);
+  font-weight: 600;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.hero-title, .display {
+  font-size: var(--text-hero);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  font-weight: 500;
+}
+
+h1, .h1 {
+  font-size: var(--text-h1);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  font-weight: 600;
+}
+
+h2, .h2 {
+  font-size: var(--text-h2);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  font-weight: 600;
+}
+
+h3, .h3 {
+  font-size: var(--text-h3);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  font-weight: 600;
+}
+
+h4, .h4 {
+  font-size: var(--text-h4);
+  line-height: var(--leading-snug);
+  font-weight: 600;
+}
+
+h5, .h5 {
+  font-size: var(--text-h5);
+  line-height: var(--leading-normal);
+  font-weight: 600;
+}
+
+h6, .h6 {
+  font-size: var(--text-h6);
+  line-height: var(--leading-normal);
+  font-weight: 600;
+}
+
+p, .body {
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-body);
+  text-wrap: pretty;
+}
+
+.body-lg, .lede {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-body);
+}
+
+.body-sm { font-size: var(--text-sm); }
+.caption { font-size: var(--text-xs); color: var(--color-text-muted); line-height: var(--leading-normal); }
+.label {
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover { color: var(--color-primary-dark); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+code, kbd, samp, pre { font-family: var(--font-mono); font-size: 0.95em; }
+
+/* =============================================================
+ * Utility containers
+ * ============================================================= */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.section { padding-block: var(--space-11); }
+.section--lg { padding-block: var(--space-12); }
+.section--alt { background: var(--color-bg-alt); }
+.section--primary-tint { background: var(--color-primary-50); }
+.section--charcoal { background: var(--color-charcoal); color: var(--color-text-inverse); }
+.section--charcoal h1, .section--charcoal h2, .section--charcoal h3, .section--charcoal h4 { color: var(--color-text-inverse); }
+
+/* =============================================================
+ * Focus ring — accessibility
+ * ============================================================= */
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* =============================================================
+ * Selection
+ * ============================================================= */
+
+::selection { background: var(--color-primary-100); color: var(--color-primary-darker); }

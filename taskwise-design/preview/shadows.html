@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Shadows</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; padding-top: 12px; padding-bottom: 24px; }
+  .s { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+  .s .box { width: 86px; height: 64px; background: #fff; border-radius: 14px; border: 1px solid var(--color-border); }
+  .s .lbl { font-family: var(--font-mono); font-size: 11px; color: var(--color-text); }
+</style></head>
+<body><div class="card">
+  <div class="grid">
+    <div class="s"><div class="box" style="box-shadow:var(--shadow-xs)"></div><div class="lbl">xs</div></div>
+    <div class="s"><div class="box" style="box-shadow:var(--shadow-sm)"></div><div class="lbl">sm</div></div>
+    <div class="s"><div class="box" style="box-shadow:var(--shadow-md)"></div><div class="lbl">md · cards</div></div>
+    <div class="s"><div class="box" style="box-shadow:var(--shadow-lg)"></div><div class="lbl">lg · hero</div></div>
+    <div class="s"><div class="box" style="box-shadow:var(--shadow-primary);border-color:var(--color-primary-100)"></div><div class="lbl">primary</div></div>
+  </div>
+  <div style="border-top:1px solid var(--color-divider);padding-top:14px;font-size:13px;color:var(--color-text-muted);line-height:1.5">
+    Multi-layer, warm-tinted shadows (mixed with charcoal, not pure black). Cards pair a 1px border <em>and</em> a soft shadow — defined edges, gentle lift.
+  </div>
+</div></body></html>

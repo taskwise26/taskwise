@@ -1,0 +1,1048 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TaskWise — IT Automation for Enterprises</title>
+<meta name="description" content="Automate IT service requests, provisioning, compliance, and incident response. 180+ enterprise integrations. Built for enterprise IT teams in Singapore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M32 6 C46 6 58 16 58 32 C58 48 46 58 32 58 C18 58 6 48 6 32 C6 16 18 6 32 6 Z' fill='%234B52CC'/><g fill='none' stroke='%23FBFAF7' stroke-width='4.6' stroke-linecap='round' stroke-linejoin='round'><path d='M16 30 L23 41 L32 24'/><path d='M32 30 L39 41 L48 22'/></g><circle cx='48' cy='22' r='2.4' fill='%23F2A93B'/></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Manrope:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-primary:#4B52CC;--color-primary-dark:#363CA8;--color-primary-darker:#2A2F88;--color-primary-light:#7077DC;
+  --color-primary-50:#EEF0FB;--color-primary-100:#DDE0F6;--color-primary-200:#BEC3ED;
+  --color-accent:#F2A93B;--color-accent-dark:#D88F1F;--color-accent-50:#FDF4E1;--color-accent-100:#FAE4B5;
+  --color-bg:#FBFAF7;--color-bg-alt:#F5F3EE;--color-surface:#FFFFFF;--color-surface-sunken:#F9F7F2;
+  --color-border:#E8E4DC;--color-border-strong:#D6D1C5;--color-divider:#EFECE5;
+  --color-charcoal:#1B1D2E;--color-charcoal-soft:#2A2D44;
+  --color-text:#1B1D2E;--color-text-body:#4A4D63;--color-text-muted:#8B8DA0;--color-text-faint:#B8B9C7;--color-text-inverse:#FBFAF7;
+  --color-success:#3E9B6E;--color-success-50:#E6F3EC;--color-warning:#E6A23C;--color-warning-50:#FBF1DD;
+  --color-error:#D85959;--color-error-50:#F9E5E5;
+  --font-display:'Bricolage Grotesque','Manrope',system-ui,sans-serif;
+  --font-body:'Manrope',system-ui,-apple-system,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --text-hero:clamp(3rem,5vw + 1rem,4.5rem);--text-h1:clamp(2.25rem,3vw + 1rem,3.25rem);
+  --text-h2:clamp(1.875rem,2vw + 1rem,2.5rem);--text-h3:clamp(1.5rem,1vw + 1rem,1.875rem);
+  --text-h4:1.25rem;--text-lg:1.125rem;--text-base:1rem;--text-sm:0.9375rem;--text-xs:0.8125rem;--text-2xs:0.6875rem;
+  --leading-tight:1.1;--leading-snug:1.25;--leading-normal:1.5;--leading-relaxed:1.65;
+  --tracking-tight:-0.02em;--tracking-snug:-0.01em;--tracking-label:0.08em;
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;
+  --space-7:32px;--space-8:40px;--space-9:56px;--space-10:72px;--space-11:96px;--space-12:128px;
+  --radius-xs:6px;--radius-sm:8px;--radius-md:12px;--radius-lg:20px;--radius-xl:28px;--radius-2xl:36px;--radius-full:9999px;
+  --shadow-xs:0 1px 2px rgba(27,29,46,.04);
+  --shadow-sm:0 1px 2px rgba(27,29,46,.04),0 1px 1px rgba(27,29,46,.03);
+  --shadow-md:0 4px 14px -4px rgba(27,29,46,.06),0 2px 4px rgba(27,29,46,.04);
+  --shadow-lg:0 24px 48px -16px rgba(27,29,46,.10),0 8px 16px -8px rgba(27,29,46,.06);
+  --shadow-xl:0 32px 64px -24px rgba(27,29,46,.14),0 16px 32px -16px rgba(27,29,46,.08);
+  --shadow-primary:0 8px 24px -8px rgba(75,82,204,.32);
+  --ease-out:cubic-bezier(.32,.72,0,1);--ease-in-out:cubic-bezier(.65,0,.35,1);
+  --dur-fast:150ms;--dur-base:220ms;--dur-slow:320ms;--dur-slower:500ms;
+  --container-max:1200px;--nav-height:72px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font-body);font-size:var(--text-base);line-height:var(--leading-normal);color:var(--color-text-body);background:var(--color-bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-display);color:var(--color-text);font-weight:600;margin:0;text-wrap:balance}
+p{margin:0;line-height:var(--leading-relaxed);color:var(--color-text-body);text-wrap:pretty}
+a{color:var(--color-primary);text-decoration:none;transition:color var(--dur-fast) var(--ease-out)}
+a:hover{color:var(--color-primary-dark);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+::selection{background:var(--color-primary-100);color:var(--color-primary-darker)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(251,250,247,.78);border-bottom:1px solid transparent;transition:border-color var(--dur-base) var(--ease-out)}
+.nav.scrolled{border-bottom-color:var(--color-border)}
+.nav-inner{max-width:var(--container-max);margin:0 auto;padding:16px var(--space-6);display:flex;align-items:center;justify-content:space-between;gap:var(--space-6)}
+.nav-left{display:flex;align-items:center;gap:var(--space-7)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--color-text-body);font-weight:500;font-size:14px;text-decoration:none;transition:color var(--dur-fast) var(--ease-out)}
+.nav-links a:hover{color:var(--color-text);text-decoration:none}
+.nav-right{display:flex;align-items:center;gap:10px}
+@media(max-width:860px){.nav-links{display:none}}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:var(--radius-md);font-family:var(--font-body);font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer;text-decoration:none;transition:background var(--dur-fast) var(--ease-out),transform var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out);white-space:nowrap}
+.btn:hover{text-decoration:none}
+.btn:active{transform:scale(.98)!important;box-shadow:none!important}
+.btn-primary{background:var(--color-primary);color:white;box-shadow:var(--shadow-primary),inset 0 1px 0 rgba(255,255,255,.18)}
+.btn-primary:hover{background:var(--color-primary-dark);transform:translateY(-1px);color:white}
+.btn-secondary{background:white;color:var(--color-text);border-color:var(--color-border-strong);box-shadow:var(--shadow-sm)}
+.btn-secondary:hover{background:var(--color-bg-alt);border-color:var(--color-text);color:var(--color-text)}
+.btn-sm{padding:8px 14px;font-size:13px;border-radius:10px}
+.btn-lg{padding:16px 28px;font-size:16px;border-radius:14px}
+.btn-on-dark{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18);color:white}
+.btn-on-dark:hover{background:rgba(255,255,255,.12);color:white}
+
+/* HERO */
+.hero{position:relative;padding:clamp(80px,12vw,140px) 0 clamp(60px,8vw,100px);overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(75,82,204,.08),transparent 70%),radial-gradient(ellipse 40% 30% at 80% 20%,rgba(242,169,59,.08),transparent 60%)}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(27,29,46,.08) 1px,transparent 1px);background-size:24px 24px;mask-image:radial-gradient(ellipse 60% 60% at 50% 40%,black 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 40%,black 30%,transparent 75%);pointer-events:none}
+.hero-content{position:relative;max-width:860px;margin:0 auto;text-align:center;padding:0 var(--space-6)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 8px;background:white;border:1px solid var(--color-border);border-radius:9999px;font-size:13px;font-weight:500;color:var(--color-text-body);box-shadow:var(--shadow-sm);margin-bottom:24px}
+.eyebrow-pill{background:var(--color-accent);color:var(--color-charcoal);font-size:11px;font-weight:700;padding:2px 8px;border-radius:9999px;letter-spacing:.04em}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.5rem,5.5vw + .5rem,4.5rem);line-height:1.04;letter-spacing:-.025em;font-weight:500;color:var(--color-text);margin:0 0 24px;text-wrap:balance}
+.accent-amber{position:relative;white-space:nowrap}
+.accent-amber::after{content:'';position:absolute;left:-2px;right:-2px;bottom:4px;height:12px;background:var(--color-accent);opacity:.4;z-index:-1;border-radius:4px}
+.hero .lede{font-size:clamp(1.0625rem,.5vw + 1rem,1.25rem);line-height:1.6;color:var(--color-text-body);max-width:660px;margin:0 auto 36px}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.hero-meta{display:flex;gap:24px;justify-content:center;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--color-text-muted)}
+.hero-meta .meta-item{display:inline-flex;align-items:center;gap:6px}
+.hero-demo-wrap{position:relative;margin-top:64px;padding:0 var(--space-6)}
+.hero-demo{max-width:1100px;margin:0 auto;background:white;border-radius:var(--radius-xl);border:1px solid var(--color-border);box-shadow:var(--shadow-xl);padding:16px;position:relative}
+.hero-demo::before{content:'';position:absolute;inset:-24px;background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(75,82,204,.12),transparent 70%);z-index:-1;border-radius:48px;filter:blur(20px)}
+
+/* SECTIONS */
+section{padding:clamp(72px,10vw,112px) 0}
+.section-alt{background:var(--color-bg-alt)}
+.section-charcoal{background:var(--color-charcoal);color:rgba(255,255,255,.82)}
+.section-charcoal h1,.section-charcoal h2,.section-charcoal h3,.section-charcoal h4{color:white}
+.section-head{max-width:720px;margin:0 auto 56px;text-align:center;padding:0 var(--space-6)}
+.section-head .eyebrow-text{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-primary);margin-bottom:12px}
+.section-head h2{font-family:var(--font-display);font-size:clamp(1.875rem,2.5vw + 1rem,2.75rem);line-height:1.1;letter-spacing:-.02em;font-weight:500;color:var(--color-text);margin:0 0 16px;text-wrap:balance}
+.section-head .lede{font-size:1.0625rem;line-height:1.6;color:var(--color-text-body);margin:0;text-wrap:pretty}
+
+/* STATS */
+.stats-strip{padding:56px 0;border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)}
+.stats-grid{max-width:var(--container-max);margin:0 auto;padding:0 var(--space-6);display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+@media(max-width:700px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+.stat-num{font-family:var(--font-display);font-size:clamp(2rem,3vw + 1rem,2.75rem);font-weight:500;color:var(--color-primary);letter-spacing:-.025em;line-height:1;margin-bottom:8px}
+.stat-label{font-size:13px;color:var(--color-text-muted);line-height:1.4}
+
+/* FEATURES */
+.features{max-width:var(--container-max);margin:0 auto;padding:0 var(--space-6);display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.features{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.features{grid-template-columns:1fr}}
+.feature-card{background:white;border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:16px;transition:box-shadow var(--dur-base) var(--ease-out),border-color var(--dur-base) var(--ease-out),opacity var(--dur-slow) var(--ease-out),transform var(--dur-slow) var(--ease-out);opacity:0;transform:translateY(10px)}
+.feature-card.visible{opacity:1;transform:translateY(0)}
+.feature-card:hover{box-shadow:var(--shadow-lg);border-color:rgba(75,82,204,.16)}
+.feature-icon{width:52px;height:52px;border-radius:14px;background:var(--color-primary-50);display:grid;place-items:center;color:var(--color-primary);flex-shrink:0}
+.feature-card h3{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--color-text);margin:0;letter-spacing:-.01em}
+.feature-card p{font-size:15px;line-height:1.6;color:var(--color-text-body);margin:0}
+.feature-link{margin-top:auto;padding-top:8px;font-size:14px;font-weight:600;color:var(--color-primary);display:inline-flex;align-items:center;gap:6px}
+
+/* DEMO SECTIONS */
+.demo-section{max-width:var(--container-max);margin:0 auto;padding:0 var(--space-6);display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:center}
+.demo-section.reverse{grid-template-columns:1.15fr 1fr}
+.demo-section.reverse>.demo-text{order:2}
+@media(max-width:900px){.demo-section,.demo-section.reverse{grid-template-columns:1fr;gap:36px}.demo-section.reverse>.demo-text{order:0}}
+.demo-text .eyebrow-text{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-primary);margin-bottom:12px}
+.demo-text h2{font-family:var(--font-display);font-size:clamp(1.75rem,2vw + 1rem,2.5rem);line-height:1.1;letter-spacing:-.02em;font-weight:500;margin:0 0 18px;text-wrap:balance}
+.demo-text p{font-size:16px;line-height:1.65;margin:0 0 12px}
+.demo-bullets{list-style:none;padding:0;margin:18px 0 24px;display:flex;flex-direction:column;gap:10px}
+.demo-bullets li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.55}
+.demo-bullets li svg{color:var(--color-primary);flex-shrink:0;margin-top:3px}
+.demo-panel{position:relative}
+
+/* SOLUTIONS */
+.solutions{max-width:var(--container-max);margin:0 auto;padding:0 var(--space-6);display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:800px){.solutions{grid-template-columns:repeat(2,1fr)}}
+.solution{padding:28px 24px;background:white;border:1px solid var(--color-border);border-radius:var(--radius-lg);transition:box-shadow var(--dur-base) var(--ease-out),transform var(--dur-base) var(--ease-out)}
+.solution:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.solution-num{font-family:var(--font-mono);font-size:11px;color:var(--color-text-muted);letter-spacing:.05em;margin-bottom:12px}
+.solution h4{font-family:var(--font-display);font-size:17px;font-weight:600;color:var(--color-text);margin:0 0 8px;letter-spacing:-.01em}
+.solution p{font-size:13px;line-height:1.5;color:var(--color-text-muted);margin:0}
+
+/* TESTIMONIALS */
+.testimonials{max-width:var(--container-max);margin:0 auto;padding:0 var(--space-6);display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.testimonials{grid-template-columns:1fr}}
+.t-card{background:white;border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:18px}
+.t-card blockquote{margin:0;font-family:var(--font-display);font-size:18px;line-height:1.45;font-weight:500;color:var(--color-text);letter-spacing:-.005em}
+.t-author{display:flex;align-items:center;gap:12px;margin-top:auto}
+.t-avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:white;font-family:var(--font-display);font-weight:600;font-size:14px}
+.t-avatar.v1{background:linear-gradient(135deg,#7077DC,#4B52CC)}
+.t-avatar.v2{background:linear-gradient(135deg,#F2A93B,#D88F1F)}
+.t-avatar.v3{background:linear-gradient(135deg,#4A6F8C,#2A4A66)}
+.t-author .name{font-weight:600;color:var(--color-text);font-size:14px;line-height:1.2}
+.t-author .role{font-size:12px;color:var(--color-text-muted)}
+
+/* CTA SECTION */
+.cta-panel{max-width:var(--container-max);margin:0 auto;padding:0 var(--space-6)}
+.cta-card{background:var(--color-charcoal);border-radius:var(--radius-xl);padding:clamp(48px,7vw,72px);text-align:center;position:relative;overflow:hidden;color:white}
+.cta-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 30% 0%,rgba(75,82,204,.35),transparent 60%),radial-gradient(ellipse 50% 60% at 80% 100%,rgba(242,169,59,.18),transparent 60%);pointer-events:none}
+.cta-card>*{position:relative}
+.cta-card h2{font-family:var(--font-display);font-size:clamp(1.875rem,3vw + 1rem,2.75rem);font-weight:500;line-height:1.1;letter-spacing:-.025em;color:white;margin:0 0 16px;text-wrap:balance}
+.cta-card p{font-size:17px;line-height:1.6;color:rgba(255,255,255,.7);max-width:540px;margin:0 auto 32px}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* CONTACT */
+.contact-section{background:var(--color-bg-alt)}
+.contact-panel{max-width:var(--container-max);margin:0 auto;padding:0 var(--space-6);display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+@media(max-width:900px){.contact-panel{grid-template-columns:1fr;gap:32px}}
+.contact-left .eyebrow-text{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-primary);margin-bottom:12px}
+.contact-left h2{font-family:var(--font-display);font-size:clamp(1.875rem,2.5vw + 1rem,2.5rem);line-height:1.1;letter-spacing:-.02em;font-weight:500;color:var(--color-text);margin:0 0 16px;text-wrap:balance}
+.contact-left p{font-size:16px;line-height:1.6;color:var(--color-text-body);margin:0 0 24px}
+.contact-bullets{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:12px}
+.contact-bullets li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.55;color:var(--color-text-body)}
+.contact-bullets li svg{color:var(--color-primary);flex-shrink:0;margin-top:3px}
+.contact-meta{display:flex;flex-wrap:wrap;gap:16px 28px;padding-top:24px;border-top:1px solid var(--color-divider)}
+.contact-meta .meta-item{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--color-text-body);font-weight:500}
+.contact-meta .meta-item svg{color:var(--color-text-muted)}
+.contact-form{background:white;border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:32px;box-shadow:var(--shadow-md);display:flex;flex-direction:column;gap:16px;position:relative}
+.contact-form .field{display:flex;flex-direction:column;gap:6px}
+.contact-form label{font-size:13px;font-weight:600;color:var(--color-text)}
+.contact-form label .req{color:var(--color-error);margin-left:2px}
+.contact-form .input{font-family:var(--font-body);font-size:15px;padding:12px 14px;background:var(--color-surface);border:1px solid var(--color-border-strong);border-radius:var(--radius-md);color:var(--color-text);width:100%;transition:border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
+.contact-form .input::placeholder{color:var(--color-text-faint)}
+.contact-form .input:focus{outline:none;border-color:var(--color-primary);box-shadow:0 0 0 4px var(--color-primary-50)}
+.contact-form textarea.input{resize:vertical;min-height:96px;line-height:1.5;font-family:var(--font-body)}
+.contact-form .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:540px){.contact-form .field-row{grid-template-columns:1fr}}
+.contact-submit{justify-content:center;margin-top:8px}
+.contact-privacy{font-size:12px;color:var(--color-text-muted);line-height:1.5;text-align:center}
+.contact-privacy a{color:var(--color-text-muted);text-decoration:underline;text-underline-offset:2px}
+.contact-success{position:absolute;inset:0;background:white;border-radius:var(--radius-xl);display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px;font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--color-success);text-align:center;padding:32px;text-wrap:balance}
+.contact-success svg{background:var(--color-success-50);border-radius:50%;padding:10px;width:48px;height:48px;box-sizing:border-box}
+.contact-form.submitted .contact-success{display:flex}
+.contact-form.sending .contact-submit{opacity:.6;pointer-events:none}
+
+/* FOOTER */
+.footer{background:var(--color-charcoal);color:rgba(255,255,255,.6);padding:80px 0 32px}
+.footer-inner{max-width:var(--container-max);margin:0 auto;padding:0 var(--space-6)}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.08)}
+@media(max-width:800px){.footer-top{grid-template-columns:1fr 1fr}}
+.footer-brand p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.55);max-width:280px;margin:16px 0}
+.footer-brand .social{display:flex;gap:8px}
+.footer-brand .social a{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.05);display:grid;place-items:center;color:rgba(255,255,255,.65);transition:all var(--dur-fast) var(--ease-out)}
+.footer-brand .social a:hover{background:rgba(255,255,255,.1);color:white;text-decoration:none}
+.footer-col h5{font-family:var(--font-display);font-size:13px;font-weight:600;color:white;margin:0 0 18px}
+.footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.footer-col a{color:rgba(255,255,255,.6);text-decoration:none;font-size:14px;transition:color var(--dur-fast) var(--ease-out)}
+.footer-col a:hover{color:white}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;flex-wrap:wrap;gap:16px;color:rgba(255,255,255,.4);font-size:13px}
+.footer-bottom .legal-links{display:flex;gap:24px}
+.footer-bottom .legal-links a{color:rgba(255,255,255,.5);text-decoration:none}
+
+/* DEMO FRAME */
+.dframe{background:white;border:1px solid var(--color-border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg)}
+.dframe-header{display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--color-bg-alt);border-bottom:1px solid var(--color-border)}
+.dframe-dots{display:flex;gap:6px}
+.dframe-dots span{width:10px;height:10px;border-radius:50%}
+.dframe-dots span:nth-child(1){background:#D85959}
+.dframe-dots span:nth-child(2){background:#E6A23C}
+.dframe-dots span:nth-child(3){background:#3E9B6E}
+.dframe-url{flex:1;background:white;border:1px solid var(--color-border);border-radius:9999px;padding:4px 14px;font-family:var(--font-mono);font-size:11px;color:var(--color-text-muted);display:flex;align-items:center;gap:6px}
+
+/* WORKFLOW DEMO */
+.hero-workflow{display:grid;grid-template-columns:240px 1fr;gap:0;min-height:480px}
+@media(max-width:700px){.hero-workflow{grid-template-columns:1fr}}
+.hwf-side{background:var(--color-bg-alt);border-right:1px solid var(--color-border);padding:20px 16px;display:flex;flex-direction:column;gap:4px}
+@media(max-width:700px){.hwf-side{display:none}}
+.hwf-side .side-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-muted);font-weight:600;margin:8px 0 6px}
+.hwf-side .side-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:10px;font-size:13px;color:var(--color-text-body);cursor:pointer}
+.hwf-side .side-item.active{background:white;color:var(--color-primary);box-shadow:var(--shadow-xs);font-weight:600}
+.hwf-side .side-item .dot{width:6px;height:6px;border-radius:50%;background:var(--color-text-muted);flex-shrink:0;margin-left:auto}
+.hwf-side .side-item .dot.live{background:var(--color-success);animation:pulse 1.8s infinite}
+.hwf-canvas{position:relative;padding:32px;background:linear-gradient(rgba(75,82,204,.04) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,rgba(75,82,204,.04) 1px,transparent 1px) 0 0/24px 24px,var(--color-bg);min-height:460px}
+.wf-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
+.wf-edge-path{fill:none;stroke:var(--color-border-strong);stroke-width:2;stroke-dasharray:5 5;stroke-linecap:round;transition:stroke 240ms var(--ease-out)}
+.wf-edge-path.active{stroke:var(--color-primary);filter:drop-shadow(0 0 6px rgba(75,82,204,.45));animation:wf-dash-flow 1s linear infinite}
+.wf-edge-path.done{stroke:var(--color-success);stroke-dasharray:none;opacity:.55}
+@keyframes wf-dash-flow{to{stroke-dashoffset:-20}}
+.wf-node{position:absolute;z-index:1;background:white;border:1px solid var(--color-border);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;color:var(--color-text);width:188px;transition:border-color 240ms var(--ease-out),box-shadow 240ms var(--ease-out)}
+.wf-node[data-pos="tl"]{top:36px;left:24px}
+.wf-node[data-pos="tc"]{top:36px;left:50%;margin-left:-94px}
+.wf-node[data-pos="tr"]{top:36px;right:24px}
+.wf-node[data-pos="br"]{top:260px;right:24px}
+.wf-node[data-pos="bl"]{top:260px;left:24px}
+.wf-node.processing{border-color:var(--color-primary);box-shadow:var(--shadow-primary),0 0 0 4px rgba(75,82,204,.08)}
+.wf-node.done{border-color:var(--color-success)}
+.wf-node .ic{width:28px;height:28px;border-radius:8px;background:var(--color-primary-50);color:var(--color-primary);display:grid;place-items:center;flex-shrink:0}
+.wf-node.done .ic{background:var(--color-success-50);color:var(--color-success)}
+.wf-node .meta{font-size:11px;color:var(--color-text-muted);font-weight:500;margin-top:1px}
+.wf-node .tick{position:absolute;right:-8px;top:-8px;width:20px;height:20px;border-radius:50%;background:var(--color-success);color:white;display:grid;place-items:center;opacity:0;transition:opacity 220ms var(--ease-out)}
+.wf-node.done .tick{opacity:1}
+.hwf-status{position:absolute;bottom:16px;left:16px;right:16px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border:1px solid var(--color-border);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:12px;font-size:12px;color:var(--color-text-body);box-shadow:var(--shadow-sm)}
+.hwf-status .runs{font-family:var(--font-mono);background:var(--color-primary-50);color:var(--color-primary);padding:2px 8px;border-radius:6px;font-weight:600;font-size:11px}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--color-success);animation:pulse 1.6s infinite;box-shadow:0 0 0 4px rgba(62,155,110,.15)}
+
+/* OCR DEMO */
+.ocr-demo{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media(max-width:700px){.ocr-demo{grid-template-columns:1fr}}
+.ocr-doc{position:relative;background:#FBFAF7;border-right:1px solid var(--color-border);padding:28px;overflow:hidden;min-height:420px}
+@media(max-width:700px){.ocr-doc{border-right:none;border-bottom:1px solid var(--color-border)}}
+.ocr-doc-paper{background:white;border:1px solid var(--color-border);border-radius:8px;padding:22px;box-shadow:var(--shadow-md);position:relative;font-family:var(--font-mono);font-size:10px;color:#5C5F75;line-height:1.6}
+.ocr-doc-paper h6{font-family:var(--font-display);font-size:16px;color:var(--color-text);margin:0 0 4px;font-weight:600}
+.ocr-doc-paper .doc-meta{font-size:9px;color:var(--color-text-muted);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--color-divider)}
+.ocr-row{display:flex;justify-content:space-between;padding:3px 0}
+.ocr-row.total{border-top:1px solid var(--color-divider);margin-top:8px;padding-top:8px;font-weight:600;color:var(--color-text)}
+.ocr-highlight{position:absolute;border:2px solid var(--color-primary);border-radius:4px;background:rgba(75,82,204,.08);opacity:0;pointer-events:none;transition:opacity 300ms var(--ease-out)}
+.ocr-highlight.show{opacity:1}
+.ocr-scan-line{position:absolute;left:24px;right:24px;height:2px;background:linear-gradient(90deg,transparent,var(--color-primary),transparent);box-shadow:0 0 12px var(--color-primary);top:0;opacity:0}
+.ocr-scan-line.scanning{animation:scan-vertical 2s var(--ease-in-out)}
+@keyframes scan-vertical{0%{top:50px;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:340px;opacity:0}}
+.ocr-fields{padding:28px;display:flex;flex-direction:column;gap:4px}
+.ocr-fields h6{font-family:var(--font-display);font-size:13px;font-weight:600;color:var(--color-text);margin:0 0 14px;display:flex;align-items:center;gap:8px}
+.ocr-fields h6 .sm-dot{width:6px;height:6px;border-radius:50%;background:var(--color-success);animation:pulse 1.6s infinite}
+.ocr-field{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:10px;border:1px solid var(--color-border);background:var(--color-surface);transition:all 280ms var(--ease-out);opacity:0;transform:translateX(10px);margin-bottom:8px}
+.ocr-field.shown{opacity:1;transform:translateX(0)}
+.ocr-field .lbl{font-size:11px;color:var(--color-text-muted)}
+.ocr-field .val{font-family:var(--font-mono);font-size:12px;color:var(--color-text);font-weight:600}
+.ocr-field .conf{font-size:10px;padding:2px 7px;border-radius:9999px;background:var(--color-success-50);color:#2A6F4F;font-weight:600;margin-left:8px}
+.ocr-field.warn .conf{background:var(--color-warning-50);color:#A06A1A}
+.ocr-status{margin-top:auto;padding-top:14px;border-top:1px solid var(--color-divider);display:flex;align-items:center;gap:10px;font-size:12px;color:var(--color-text-muted)}
+.ocr-status .check{width:22px;height:22px;border-radius:50%;background:var(--color-success);color:white;display:grid;place-items:center}
+
+/* MESSAGING DEMO */
+.msg-demo{background:var(--color-bg-alt);padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:20px;min-height:420px}
+@media(max-width:700px){.msg-demo{grid-template-columns:1fr}}
+.msg-channel{background:white;border:1px solid var(--color-border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.msg-channel-header{padding:12px 16px;border-bottom:1px solid var(--color-divider);display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--color-text)}
+.msg-channel-header .ch-mark{width:22px;height:22px;border-radius:6px;display:grid;place-items:center}
+.msg-channel.slack .ch-mark{background:#4A154B;color:white}
+.msg-channel.teams .ch-mark{background:#5059C9;color:white}
+.msg-stream{flex:1;padding:14px 16px;display:flex;flex-direction:column;gap:12px;overflow:hidden}
+.msg{display:flex;gap:10px;opacity:0;transform:translateY(8px);transition:all 320ms var(--ease-out)}
+.msg.shown{opacity:1;transform:translateY(0)}
+.msg .avatar{width:32px;height:32px;border-radius:8px;flex-shrink:0;display:grid;place-items:center;color:white;font-family:var(--font-display);font-weight:600;font-size:12px}
+.msg.bot .avatar{background:var(--color-primary)}
+.msg.user1 .avatar{background:linear-gradient(135deg,#F2A93B,#D88F1F)}
+.msg.user2 .avatar{background:linear-gradient(135deg,#4A6F8C,#2A4A66)}
+.msg .body{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.msg .name{font-size:12px;font-weight:600;color:var(--color-text);display:flex;align-items:center;gap:6px}
+.msg .name .bot-pill{font-size:9px;background:var(--color-primary-50);color:var(--color-primary);padding:1px 5px;border-radius:4px;font-weight:700;letter-spacing:.04em}
+.msg .time{font-size:10px;color:var(--color-text-muted);font-weight:500}
+.msg .text{font-size:12px;line-height:1.5;color:var(--color-text-body)}
+.msg-card{margin-top:6px;background:var(--color-bg-alt);border:1px solid var(--color-border);border-radius:10px;padding:10px 12px;font-size:11px}
+.msg-card .mc-row{display:flex;justify-content:space-between;padding:2px 0;color:var(--color-text-body)}
+.msg-card .mc-row .v{font-family:var(--font-mono);color:var(--color-text);font-weight:600}
+.msg-card .mc-actions{display:flex;gap:6px;margin-top:10px}
+.msg-card .mc-actions button{padding:4px 10px;border-radius:8px;font-size:11px;font-weight:600;border:none;cursor:pointer;font-family:inherit}
+.msg-card .mc-actions .approve{background:var(--color-success);color:white}
+.msg-card .mc-actions .reject{background:white;border:1px solid var(--color-border);color:var(--color-text-body)}
+
+/* ANIMATIONS */
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(62,155,110,.15)}50%{box-shadow:0 0 0 8px rgba(62,155,110,0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp var(--dur-slow) var(--ease-out) both}
+.fade-up-1{animation-delay:80ms}
+.fade-up-2{animation-delay:160ms}
+.fade-up-3{animation-delay:240ms}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="#" class="nav-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" width="130" height="32" role="img" aria-label="TaskWise">
+          <path d="M32 6 C46 6 58 16 58 32 C58 48 46 58 32 58 C18 58 6 48 6 32 C6 16 18 6 32 6 Z" fill="#4B52CC"/>
+          <g fill="none" stroke="#FBFAF7" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 30 L23 41 L32 24"/><path d="M32 30 L39 41 L48 22"/>
+          </g>
+          <circle cx="48" cy="22" r="2.4" fill="#F2A93B"/>
+          <text x="76" y="42" font-family="'Bricolage Grotesque', system-ui, sans-serif" font-weight="600" font-size="26" letter-spacing="-0.6" fill="#1B1D2E">TaskWise</text>
+        </svg>
+      </a>
+      <div class="nav-links">
+        <a href="#product">Product</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="btn btn-primary btn-sm" data-scroll="#contact">Book a demo
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-content">
+    <h1 class="fade-up">
+      Quietly automate the IT work that <span class="accent-amber">slows your team down.</span>
+    </h1>
+    <p class="lede fade-up fade-up-2">
+      Service requests, provisioning, compliance checks, and 180+ enterprise integrations — orchestrated in one platform, with the audit trail your security team needs.
+    </p>
+  </div>
+
+  <div class="hero-demo-wrap">
+    <div class="hero-demo">
+      <div class="dframe">
+        <div class="dframe-header">
+          <div class="dframe-dots"><span></span><span></span><span></span></div>
+          <div class="dframe-url">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            app.taskwise.sg / workflows / it-access-provisioning
+          </div>
+          <div style="display:flex;gap:6px;font-size:11px;color:var(--color-text-muted);align-items:center">
+            <span class="hwf-status" style="position:static;padding:4px 10px"><span class="live-dot"></span>Live</span>
+          </div>
+        </div>
+        <div class="hero-workflow" data-demo="workflow">
+          <div class="hwf-side">
+            <div class="side-label">Workflows</div>
+            <div class="side-item active">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+              Access provisioning
+              <span class="dot live"></span>
+            </div>
+            <div class="side-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+              Patch deployment
+            </div>
+            <div class="side-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              Asset onboarding
+            </div>
+            <div class="side-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              Incident routing
+            </div>
+            <div class="side-label" style="margin-top:14px">Recent runs</div>
+            <div style="display:flex;flex-direction:column;gap:4px;font-family:var(--font-mono);font-size:10px;color:var(--color-text-muted);padding-left:10px">
+              <div>&#10003; 14:32 &middot; REQ-08412</div>
+              <div>&#10003; 14:31 &middot; REQ-08411</div>
+              <div>&#10003; 14:29 &middot; REQ-08410</div>
+              <div>&#10003; 14:28 &middot; REQ-08409</div>
+            </div>
+          </div>
+          <div class="hwf-canvas">
+            <svg class="wf-svg" preserveAspectRatio="none" aria-hidden="true"></svg>
+            <div class="wf-node" data-pos="tl">
+              <div class="ic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <div>New IT request</div>
+                <div class="meta">Trigger &middot; ServiceNow</div>
+              </div>
+              <div class="tick"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div>
+            </div>
+            <div class="wf-node" data-pos="tc">
+              <div class="ic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div>
+                <div>Verify identity</div>
+                <div class="meta">Lookup &middot; Azure AD</div>
+              </div>
+              <div class="tick"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div>
+            </div>
+            <div class="wf-node" data-pos="tr">
+              <div class="ic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <div>Check access policy</div>
+                <div class="meta">Compliance &middot; Okta</div>
+              </div>
+              <div class="tick"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div>
+            </div>
+            <div class="wf-node" data-pos="br">
+              <div class="ic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+              </div>
+              <div>
+                <div>Branch &middot; approval tier</div>
+                <div class="meta">Logic</div>
+              </div>
+              <div class="tick"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div>
+            </div>
+            <div class="wf-node" data-pos="bl">
+              <div class="ic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+              </div>
+              <div>
+                <div>Provision access</div>
+                <div class="meta">Action &middot; Azure AD</div>
+              </div>
+              <div class="tick"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div>
+            </div>
+            <div class="hwf-status">
+              <span class="live-dot"></span>
+              <span><strong style="color:var(--color-text);font-weight:600">1,247 IT requests</strong> resolved today &middot; avg 8.4s/run</span>
+              <span class="runs">SLA 99.8%</span>
+              <span style="margin-left:auto">SOC 2 audit log</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="product">
+  <div class="section-head">
+    <div class="eyebrow-text">One platform</div>
+    <h2>The automation backbone for enterprise IT teams.</h2>
+    <p class="lede">Six capabilities, one orchestration layer, the same audit trail across every step.</p>
+  </div>
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h3>IT service desk automation</h3>
+      <p>Route and resolve common requests automatically. Escalate exceptions to the right engineer — not everything to the inbox.</p>
+      <a href="#contact" class="feature-link">See workflow templates
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      </div>
+      <h3>Device &amp; software provisioning</h3>
+      <p>Provision laptops, accounts, and licences on a single onboarding trigger. Revoke access on the same day someone leaves.</p>
+      <a href="#contact" class="feature-link">How provisioning works
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <h3>Access management</h3>
+      <p>Grant, review, and revoke permissions across your SaaS stack. Every change is policy-enforced, time-stamped, and logged.</p>
+      <a href="#contact" class="feature-link">Access review workflows
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+      </div>
+      <h3>Compliance &amp; patch management</h3>
+      <p>Schedule vulnerability scans, apply patches, and generate audit-ready compliance reports without manual co-ordination.</p>
+      <a href="#contact" class="feature-link">Compliance templates
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <h3>Incident response</h3>
+      <p>Detect anomalies, alert on-call engineers, and trigger remediation playbooks automatically — without waiting for a human to notice.</p>
+      <a href="#contact" class="feature-link">See incident playbooks
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6M15 2v6M12 17v5M18 14a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8h12z"/></svg>
+      </div>
+      <h3>180+ enterprise integrations</h3>
+      <p>ServiceNow, Jira, Active Directory, Azure AD, AWS, GCP, Okta — TaskWise plugs into the stack your IT team already runs.</p>
+      <a href="#contact" class="feature-link">View the directory
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- OCR / ASSET DEMO -->
+<section class="section-alt">
+  <div class="demo-section">
+    <div class="demo-text">
+      <div class="eyebrow-text">Asset Management</div>
+      <h2>Reads IT purchase documents. Validates against your CMDB. Flags discrepancies.</h2>
+      <p>Delivery notes, warranty cards, vendor invoices — TaskWise extracts asset details, matches them against your configuration database, and won't update your CMDB until everything checks out.</p>
+      <ul class="demo-bullets">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>43 supported IT document templates out of the box</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Confidence scoring on every extracted field, with low-confidence routing</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Side-by-side review when a technician needs to verify</li>
+      </ul>
+      <button class="btn btn-secondary" data-scroll="#contact">See document templates
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+    <div class="demo-panel">
+      <div class="dframe">
+        <div class="dframe-header">
+          <div class="dframe-dots"><span></span><span></span><span></span></div>
+          <div class="dframe-url">OCR Inspector &middot; IT-PO-2024-08-DELL-48291.pdf</div>
+        </div>
+        <div class="ocr-demo" data-demo="ocr">
+          <div class="ocr-doc">
+            <div class="ocr-doc-paper">
+              <h6 data-ocr="vendor">Dell Technologies Singapore</h6>
+              <div class="doc-meta">1 Fusionopolis Way &middot; Singapore 138632<br>apsg@dell.com</div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:10px">
+                <div>
+                  <div style="font-size:8px;color:#A8A9B8;margin-bottom:2px">BILL TO</div>
+                  <div style="font-size:10px;color:var(--color-text)">Northbound Corp Pte Ltd<br>Attn: IT Procurement</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-size:8px;color:#A8A9B8;margin-bottom:2px">DELIVERY ORDER</div>
+                  <div data-ocr="do-num" style="font-size:10px;color:var(--color-text);font-weight:600;display:inline-block">DO-SG-48291</div>
+                  <div style="font-size:8px;color:#A8A9B8;margin-top:6px">DATE</div>
+                  <div data-ocr="do-date" style="font-size:10px;color:var(--color-text);display:inline-block">Aug 14, 2024</div>
+                </div>
+              </div>
+              <div class="ocr-row"><span>Dell Latitude 7450 (i7, 16GB)</span><span>5 &times; S$1,450</span></div>
+              <div class="ocr-row"><span>Dell Thunderbolt Dock WD22TB</span><span>5 &times; S$320</span></div>
+              <div class="ocr-row"><span>Extended Warranty (3yr ProSupport)</span><span>S$475.00</span></div>
+              <div class="ocr-row total"><span>Total (excl. GST)</span><span data-ocr="total">S$8,750.00</span></div>
+              <div style="font-size:8px;color:#A8A9B8;margin-top:10px">Terms: NET 30 &middot; <span data-ocr="po-ref" style="font-weight:600;color:var(--color-text)">PO# PO-IT-2024-0082</span></div>
+            </div>
+            <div class="ocr-scan-line"></div>
+          </div>
+          <div class="ocr-fields">
+            <h6><span class="sm-dot"></span>Extracting &middot; 5 fields</h6>
+            <div class="ocr-field" data-target="vendor"><div><div class="lbl">Vendor</div><div class="val">Dell Technologies SG</div></div><span class="conf">99%</span></div>
+            <div class="ocr-field" data-target="do-num"><div><div class="lbl">Delivery order</div><div class="val">DO-SG-48291</div></div><span class="conf">100%</span></div>
+            <div class="ocr-field" data-target="do-date"><div><div class="lbl">Delivery date</div><div class="val">2024-08-14</div></div><span class="conf">98%</span></div>
+            <div class="ocr-field" data-target="total"><div><div class="lbl">Total amount</div><div class="val">S$8,750.00</div></div><span class="conf">99%</span></div>
+            <div class="ocr-field warn" data-target="po-ref"><div><div class="lbl">PO reference</div><div class="val">PO-IT-2024-0082</div></div><span class="conf">87% &middot; review</span></div>
+            <div class="ocr-status">
+              <div class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div>
+              <div>Matched PO in procurement system &middot; routing to asset team</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MESSAGING DEMO -->
+<section>
+  <div class="demo-section reverse">
+    <div class="demo-panel">
+      <div class="dframe">
+        <div class="dframe-header">
+          <div class="dframe-dots"><span></span><span></span><span></span></div>
+          <div class="dframe-url">Messaging &middot; approval routed to #it-approvals + #it-incidents</div>
+        </div>
+        <div class="msg-demo" data-demo="messaging">
+          <div class="msg-channel slack">
+            <div class="msg-channel-header">
+              <div class="ch-mark">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.27 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.833 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.833 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.833 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.833zm0 1.27a2.527 2.527 0 0 1 2.521 2.522 2.527 2.527 0 0 1-2.521 2.52H2.522A2.527 2.527 0 0 1 0 8.834a2.527 2.527 0 0 1 2.522-2.522h6.311zm10.122 2.522a2.528 2.528 0 0 1 2.522-2.522A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.52h-2.523V8.834zm-1.268 0a2.527 2.527 0 0 1-2.521 2.52 2.527 2.527 0 0 1-2.522-2.52V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.522 2.522v6.312zm-2.522 10.122a2.528 2.528 0 0 1 2.522 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.522-2.522v-2.522h2.522zm0-1.268a2.527 2.527 0 0 1-2.522-2.522 2.527 2.527 0 0 1 2.522-2.521h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.522h-6.313z"/></svg>
+              </div>
+              #it-approvals
+            </div>
+            <div class="msg-stream">
+              <div class="msg bot">
+                <div class="avatar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></div>
+                <div class="body">
+                  <div class="name">TaskWise <span class="bot-pill">BOT</span><span class="time">14:32</span></div>
+                  <div class="text">New access request requires approval:</div>
+                  <div class="msg-card">
+                    <div class="mc-row"><span>User</span><span class="v">John Lim (EMP-2024-1847)</span></div>
+                    <div class="mc-row"><span>Resource</span><span class="v">AWS Production</span></div>
+                    <div class="mc-row"><span>Role</span><span class="v">Developer Read-Only</span></div>
+                    <div class="mc-actions">
+                      <button class="approve">Approve</button>
+                      <button class="reject">Deny</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="msg user1">
+                <div class="avatar">WC</div>
+                <div class="body">
+                  <div class="name">Wei Chen<span class="time">14:34</span></div>
+                  <div class="text">Approved. Standard dev onboarding access.</div>
+                </div>
+              </div>
+              <div class="msg bot">
+                <div class="avatar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
+                <div class="body">
+                  <div class="name">TaskWise <span class="bot-pill">BOT</span><span class="time">14:34</span></div>
+                  <div class="text">Approved by Wei Chen. Provisioning via Okta &middot; run #REQ-08412</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="msg-channel teams">
+            <div class="msg-channel-header">
+              <div class="ch-mark">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.625 0H3.375A3.375 3.375 0 0 0 0 3.375v17.25A3.375 3.375 0 0 0 3.375 24h17.25A3.375 3.375 0 0 0 24 20.625V3.375A3.375 3.375 0 0 0 20.625 0zm-5.25 6.75a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zm2.25 10.5h-4.5v-.75a2.25 2.25 0 0 1 4.5 0v.75zM8.25 9.375a1.875 1.875 0 1 1 0 3.75 1.875 1.875 0 0 1 0-3.75zm3 8.25H5.25v-.75a3 3 0 0 1 6 0v.75z"/></svg>
+              </div>
+              #it-incidents
+            </div>
+            <div class="msg-stream">
+              <div class="msg bot">
+                <div class="avatar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                <div class="body">
+                  <div class="name">TaskWise <span class="bot-pill">AUTO</span><span class="time">14:35</span></div>
+                  <div class="text">P2 incident detected:</div>
+                  <div class="msg-card">
+                    <div class="mc-row"><span>Service</span><span class="v">PROD-DB-01</span></div>
+                    <div class="mc-row"><span>Alert</span><span class="v">Latency &gt; 200ms</span></div>
+                    <div class="mc-row"><span>Duration</span><span class="v">4 min 12 sec</span></div>
+                    <div class="mc-actions">
+                      <button class="approve">Acknowledge</button>
+                      <button class="reject">Escalate</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="msg user2">
+                <div class="avatar">PS</div>
+                <div class="body">
+                  <div class="name">Priya Singh<span class="time">14:36</span></div>
+                  <div class="text">Acknowledged. Running diagnostics now.</div>
+                </div>
+              </div>
+              <div class="msg bot">
+                <div class="avatar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+                <div class="body">
+                  <div class="name">TaskWise <span class="bot-pill">AUTO</span><span class="time">14:36</span></div>
+                  <div class="text">INC-00291 logged &middot; escalation paused 30m &middot; runbook triggered</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-text">
+      <div class="eyebrow-text">Incident &amp; Approval Flows</div>
+      <h2>Alert your on-call team in the channels they already use.</h2>
+      <p>Route access requests to #it-approvals in Slack. Send incident alerts to Teams. Every message is templated, logged, and reversible — with an escalation chain if no one responds.</p>
+      <ul class="demo-bullets">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Native Slack, Teams, WhatsApp Business, and SMTP/IMAP support</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Interactive approval buttons — one click, full audit trail</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Escalation chains with automatic timeout and fallback routing</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section id="solutions" class="section-alt">
+  <div class="section-head">
+    <div class="eyebrow-text">Solutions by team</div>
+    <h2>Built for the IT teams who can't afford downtime.</h2>
+  </div>
+  <div class="solutions">
+    <div class="solution">
+      <div class="solution-num">01 / SERVICE DESK</div>
+      <h4>Ticket triage &amp; resolution</h4>
+      <p>Auto-route and auto-resolve tier-1 requests. Hand off the exceptions, not everything.</p>
+    </div>
+    <div class="solution">
+      <div class="solution-num">02 / INFRASTRUCTURE</div>
+      <h4>Provisioning &amp; change</h4>
+      <p>Spin up environments, manage change requests, and keep your CMDB accurate without manual updates.</p>
+    </div>
+    <div class="solution">
+      <div class="solution-num">03 / SECURITY</div>
+      <h4>Incident response &amp; compliance</h4>
+      <p>Trigger remediation playbooks, run access reviews, and generate compliance evidence on demand.</p>
+    </div>
+    <div class="solution">
+      <div class="solution-num">04 / IT OPERATIONS</div>
+      <h4>Joiners, movers &amp; leavers</h4>
+      <p>Provision and de-provision access across your entire SaaS stack on a single HR trigger.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section" style="padding:clamp(72px,10vw,112px) 0">
+  <div class="contact-panel">
+    <div class="contact-left">
+      <div class="eyebrow-text">Book a demo</div>
+      <h2>Quieter IT operations are a 20-minute walkthrough away.</h2>
+      <p>Tell us what drains your IT team. A TaskWise engineer will get back within one business day with what we'd automate first — no slides, no pressure.</p>
+      <ul class="contact-bullets">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Free, no commitment</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>30 minutes with a solution engineer</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Singapore-based &middot; response within 1 business day</li>
+      </ul>
+      <div class="contact-meta">
+        <div class="meta-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <a href="mailto:info@taskwise.sg" style="color:inherit;text-decoration:none">info@taskwise.sg</a>
+        </div>
+        <div class="meta-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +65 6123 4567
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm" novalidate>
+      <input type="hidden" name="_subject" value="New Demo Request — TaskWise">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="field">
+        <label for="cf-name">Your name <span class="req">*</span></label>
+        <input id="cf-name" name="name" class="input" type="text" placeholder="Jane Tan" required>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="cf-email">Work email <span class="req">*</span></label>
+          <input id="cf-email" name="email" class="input" type="email" placeholder="you@company.com.sg" required>
+        </div>
+        <div class="field">
+          <label for="cf-phone">Contact number <span class="req">*</span></label>
+          <input id="cf-phone" name="phone" class="input" type="tel" placeholder="+65 9XXX XXXX" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cf-company">Company</label>
+        <input id="cf-company" name="company" class="input" type="text" placeholder="Your company">
+      </div>
+      <div class="field">
+        <label for="cf-ask">What would you like to automate? <span class="req">*</span></label>
+        <textarea id="cf-ask" name="message" class="input" rows="4" placeholder="e.g. We handle ~500 IT service requests a month and provisioning new hires takes 2 days of manual work." required></textarea>
+      </div>
+      <button class="btn btn-primary btn-lg contact-submit" type="submit">Request demo
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+      <div class="contact-privacy">By submitting, you agree to TaskWise contacting you about this enquiry. See our <a href="#">privacy notice</a>.</div>
+      <div class="contact-success" role="status">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+        Thanks — we'll be in touch within one business day.
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32">
+            <path d="M32 6 C46 6 58 16 58 32 C58 48 46 58 32 58 C18 58 6 48 6 32 C6 16 18 6 32 6 Z" fill="#4B52CC"/>
+            <g fill="none" stroke="#FBFAF7" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 30 L23 41 L32 24"/><path d="M32 30 L39 41 L48 22"/></g>
+            <circle cx="48" cy="22" r="2.4" fill="#F2A93B"/>
+          </svg>
+          <span style="font-family:var(--font-display);font-weight:600;font-size:22px;color:white;letter-spacing:-.01em">TaskWise</span>
+        </div>
+        <p>The automation backbone for enterprise IT teams who care about reliability and auditability.</p>
+        <div class="social">
+          <a href="#" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="X / Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#product">Service desk</a></li>
+          <li><a href="#product">Provisioning</a></li>
+          <li><a href="#product">Access management</a></li>
+          <li><a href="#product">Compliance</a></li>
+          <li><a href="#product">Integrations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Solutions</h5>
+        <ul>
+          <li><a href="#solutions">Ticket triage</a></li>
+          <li><a href="#solutions">Joiners &amp; leavers</a></li>
+          <li><a href="#solutions">Incident response</a></li>
+          <li><a href="#solutions">Patch management</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Customers</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Changelog</a></li>
+          <li><a href="#">Status</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 TaskWise Pte Ltd. All rights reserved.</div>
+      <div class="legal-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+        <a href="#">SOC 2 report</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---- Workflow demo ---- */
+(function(){
+  const root=document.querySelector('[data-demo="workflow"]');
+  if(!root)return;
+  const canvas=root.querySelector('.hwf-canvas');
+  const svg=root.querySelector('.wf-svg');
+  const nodes=[...root.querySelectorAll('.wf-node')];
+  if(!canvas||!svg||nodes.length<5)return;
+  const edgeDefs=[
+    {from:0,fSide:'right',to:1,tSide:'left'},
+    {from:1,fSide:'right',to:2,tSide:'left'},
+    {from:2,fSide:'bottom',to:3,tSide:'top'},
+    {from:3,fSide:'left',to:4,tSide:'right'},
+  ];
+  let edgePaths=[];
+  function anchor(node,side){
+    const r=node.getBoundingClientRect(),cr=canvas.getBoundingClientRect();
+    const cx=(r.left+r.right)/2-cr.left,cy=(r.top+r.bottom)/2-cr.top;
+    if(side==='top')return{x:cx,y:r.top-cr.top};
+    if(side==='bottom')return{x:cx,y:r.bottom-cr.top};
+    if(side==='left')return{x:r.left-cr.left,y:cy};
+    return{x:r.right-cr.left,y:cy};
+  }
+  function layout(){
+    const w=canvas.clientWidth,h=canvas.clientHeight;
+    svg.setAttribute('viewBox',`0 0 ${w} ${h}`);
+    const prev=edgePaths.map(p=>({active:p.classList.contains('active'),done:p.classList.contains('done')}));
+    svg.innerHTML='';edgePaths=[];
+    edgeDefs.forEach((e,i)=>{
+      const p1=anchor(nodes[e.from],e.fSide),p2=anchor(nodes[e.to],e.tSide);
+      const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+      path.setAttribute('d',`M ${p1.x} ${p1.y} L ${p2.x} ${p2.y}`);
+      path.setAttribute('class','wf-edge-path');
+      if(prev[i]){if(prev[i].active)path.classList.add('active');if(prev[i].done)path.classList.add('done');}
+      svg.appendChild(path);edgePaths.push(path);
+    });
+  }
+  function tick(){
+    nodes.forEach(n=>n.classList.remove('processing','done'));
+    edgePaths.forEach(p=>p.classList.remove('active','done'));
+    let i=0;
+    function step(){
+      if(i>0){nodes[i-1].classList.remove('processing');nodes[i-1].classList.add('done');if(edgePaths[i-1]){edgePaths[i-1].classList.remove('active');edgePaths[i-1].classList.add('done');}}
+      if(i>=nodes.length){setTimeout(tick,2200);return;}
+      nodes[i].classList.add('processing');if(edgePaths[i])edgePaths[i].classList.add('active');
+      i++;setTimeout(step,1100);
+    }
+    step();
+  }
+  function safe(){try{layout();}catch(e){}}
+  if(document.readyState==='complete')safe();else window.addEventListener('load',safe);
+  safe();window.addEventListener('resize',safe);
+  if('ResizeObserver'in window)new ResizeObserver(safe).observe(canvas);
+  const obs=new IntersectionObserver(([e])=>{if(e.isIntersecting){safe();tick();obs.disconnect();}},{threshold:.3});
+  obs.observe(root);
+})();
+
+/* ---- OCR demo ---- */
+(function(){
+  const root=document.querySelector('[data-demo="ocr"]');
+  if(!root)return;
+  const paper=root.querySelector('.ocr-doc-paper');
+  const scan=root.querySelector('.ocr-scan-line');
+  const fields=[...root.querySelectorAll('.ocr-field')];
+  if(!paper||!scan)return;
+  const hlMap=new Map();
+  function buildHL(){
+    paper.querySelectorAll('.ocr-highlight').forEach(h=>h.remove());hlMap.clear();
+    const pr=paper.getBoundingClientRect();
+    fields.forEach(f=>{
+      const t=paper.querySelector(`[data-ocr="${f.dataset.target}"]`);
+      if(!t)return;
+      const r=t.getBoundingClientRect(),pad=3;
+      const hl=document.createElement('div');hl.className='ocr-highlight';
+      hl.style.left=(r.left-pr.left-pad)+'px';hl.style.top=(r.top-pr.top-pad)+'px';
+      hl.style.width=(r.width+pad*2)+'px';hl.style.height=(r.height+pad*2)+'px';
+      paper.appendChild(hl);hlMap.set(f,hl);
+    });
+  }
+  function play(){
+    scan.classList.remove('scanning');fields.forEach(f=>f.classList.remove('shown'));hlMap.forEach(h=>h.classList.remove('show'));
+    buildHL();
+    setTimeout(()=>scan.classList.add('scanning'),300);
+    fields.forEach((f,i)=>setTimeout(()=>{f.classList.add('shown');const h=hlMap.get(f);if(h)h.classList.add('show');},700+i*380));
+    setTimeout(play,7200);
+  }
+  function safe(){try{buildHL();}catch(e){}}
+  if(document.readyState==='complete')safe();else window.addEventListener('load',safe);
+  window.addEventListener('resize',safe);
+  if('ResizeObserver'in window)new ResizeObserver(safe).observe(paper);
+  const obs=new IntersectionObserver(([e])=>{if(e.isIntersecting){play();obs.disconnect();}},{threshold:.3});
+  obs.observe(root);
+})();
+
+/* ---- Messaging demo ---- */
+(function(){
+  const root=document.querySelector('[data-demo="messaging"]');
+  if(!root)return;
+  const slackMsgs=root.querySelectorAll('.slack .msg');
+  const teamsMsgs=root.querySelectorAll('.teams .msg');
+  function play(){
+    [...slackMsgs,...teamsMsgs].forEach(m=>m.classList.remove('shown'));
+    slackMsgs.forEach((m,i)=>setTimeout(()=>m.classList.add('shown'),400+i*700));
+    teamsMsgs.forEach((m,i)=>setTimeout(()=>m.classList.add('shown'),1200+i*800));
+    setTimeout(play,8000);
+  }
+  const obs=new IntersectionObserver(([e])=>{if(e.isIntersecting){play();obs.disconnect();}},{threshold:.3});
+  obs.observe(root);
+})();
+
+/* ---- Smooth scroll ---- */
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-scroll]');if(!t)return;
+  const sel=t.getAttribute('data-scroll');const target=document.querySelector(sel);if(!target)return;
+  e.preventDefault();
+  const top=target.getBoundingClientRect().top+window.scrollY-80;
+  window.scrollTo({top,behavior:'smooth'});
+  setTimeout(()=>{const f=target.querySelector('input,textarea');if(f)f.focus({preventScroll:true});},500);
+});
+
+/* ---- Nav scroll state ---- */
+(function(){
+  const nav=document.querySelector('.nav');if(!nav)return;
+  function up(){nav.classList.toggle('scrolled',window.scrollY>12);}
+  window.addEventListener('scroll',up,{passive:true});up();
+})();
+
+/* ---- Feature card entrance ---- */
+(function(){
+  const cards=document.querySelectorAll('.feature-card');
+  if(!cards.length)return;
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        setTimeout(()=>e.target.classList.add('visible'),e.target.dataset.delay||0);
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:.15});
+  cards.forEach((c,i)=>{c.dataset.delay=i*60;obs.observe(c);});
+})();
+
+/* ---- Contact form ---- */
+(function(){
+  const form=document.getElementById('contactForm');if(!form)return;
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return;}
+    const btn=form.querySelector('.contact-submit');
+    btn.textContent='Sending...';btn.disabled=true;form.classList.add('sending');
+    const data={};
+    new FormData(form).forEach((v,k)=>{data[k]=v;});
+    try{
+      await fetch('https://formsubmit.co/ajax/info@taskwise.sg',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(data)
+      });
+    }catch(_){}
+    form.classList.remove('sending');
+    form.classList.add('submitted');
+  });
+})();
+</script>
+</body>
+</html>

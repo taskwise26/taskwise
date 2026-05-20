@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Buttons</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 12px; font-family: var(--font-body); font-weight: 600; font-size: 15px; border: 1px solid transparent; cursor: pointer; transition: all 150ms var(--ease-out); }
+  .btn-primary { background: var(--color-primary); color: white; box-shadow: var(--shadow-primary), inset 0 1px 0 rgba(255,255,255,0.18); }
+  .btn-primary:hover { background: var(--color-primary-dark); transform: translateY(-1px); }
+  .btn-secondary { background: white; color: var(--color-text); border-color: var(--color-border-strong); box-shadow: var(--shadow-sm); }
+  .btn-secondary:hover { background: var(--color-bg-alt); border-color: #1B1D2E33; }
+  .btn-ghost { background: transparent; color: var(--color-text); }
+  .btn-ghost:hover { background: var(--color-bg-alt); }
+  .btn-accent { background: var(--color-accent); color: var(--color-charcoal); }
+  .btn-accent:hover { background: var(--color-accent-dark); color: white; }
+  .btn-sm { padding: 8px 14px; font-size: 13px; border-radius: 10px; }
+  .btn-lg { padding: 16px 28px; font-size: 17px; border-radius: 14px; }
+  .row-b { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .lbl-b { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); width: 90px; flex-shrink: 0; }
+  .arrow { width: 16px; height: 16px; }
+</style></head>
+<body><div class="card">
+  <div class="row-b"><span class="lbl-b">Primary</span>
+    <button class="btn btn-primary">Book a demo
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </button>
+    <button class="btn btn-primary btn-sm">Start free</button>
+    <button class="btn btn-primary btn-lg">Get started</button>
+  </div>
+  <div class="row-b"><span class="lbl-b">Secondary</span>
+    <button class="btn btn-secondary">See it in action</button>
+    <button class="btn btn-ghost">Explore connectors</button>
+    <button class="btn btn-accent">What's new</button>
+  </div>
+  <div class="row-b"><span class="lbl-b">States</span>
+    <button class="btn btn-primary">Default</button>
+    <button class="btn btn-primary" style="background:var(--color-primary-dark);transform:translateY(-1px)">Hover</button>
+    <button class="btn btn-primary" style="background:var(--color-primary-darker);transform:scale(0.98);box-shadow:none">Pressed</button>
+    <button class="btn btn-primary" disabled style="opacity:0.4;cursor:not-allowed">Disabled</button>
+  </div>
+</div></body></html>

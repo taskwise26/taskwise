@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Logo</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 24px; align-items: center; }
+  .demo { display: flex; align-items: center; justify-content: center; padding: 28px; border-radius: 20px; border: 1px solid var(--color-border); background: white; }
+  .demo.dark { background: var(--color-charcoal); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 8px; }
+</style></head>
+<body><div class="card">
+  <div class="grid">
+    <div>
+      <div class="lbl">Mark</div>
+      <div class="demo"><img src="../assets/logo-mark.svg" width="72" height="72"></div>
+    </div>
+    <div>
+      <div class="lbl">Horizontal lockup</div>
+      <div class="demo"><img src="../assets/logo-horizontal.svg" width="220"></div>
+    </div>
+  </div>
+  <div style="border-top:1px solid var(--color-divider);padding-top:12px;font-size:13px;color:var(--color-text-muted);line-height:1.5">
+    Soft squircle mark · "task → loop" glyph · amber completion dot · Bricolage 600 wordmark.
+  </div>
+</div></body></html>

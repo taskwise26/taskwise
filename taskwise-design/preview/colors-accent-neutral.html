@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Accent + neutrals</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row1 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .row2 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .swatch { display: flex; flex-direction: column; gap: 6px; }
+  .swatch .chip { aspect-ratio: 1.4; border-radius: 14px; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); display:flex;align-items:flex-end;padding:10px;color:#fff;font-family:var(--font-mono);font-size:11px;font-weight:600; }
+  .swatch .name { font-family: var(--font-display); font-weight: 600; font-size: 13px; color: var(--color-text); }
+  .swatch .hex { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-muted); }
+  .grouplbl { font-family: var(--font-display); font-weight: 600; font-size: 12px; color: var(--color-text-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+</style></head>
+<body><div class="card">
+  <div>
+    <div class="grouplbl" style="margin-bottom:10px">Accent — warm amber</div>
+    <div class="row1">
+      <div class="swatch"><div class="chip" style="background:#D88F1F">dark</div><div class="name">Accent Dark</div><div class="hex">#D88F1F</div></div>
+      <div class="swatch"><div class="chip" style="background:#F2A93B">base</div><div class="name">Accent</div><div class="hex">#F2A93B</div></div>
+      <div class="swatch"><div class="chip" style="background:#FAE4B5;color:#D88F1F">100</div><div class="name">Accent 100</div><div class="hex">#FAE4B5</div></div>
+      <div class="swatch"><div class="chip" style="background:#FDF4E1;color:#D88F1F">50</div><div class="name">Accent 50</div><div class="hex">#FDF4E1</div></div>
+    </div>
+  </div>
+  <div>
+    <div class="grouplbl" style="margin-bottom:10px">Warm neutrals</div>
+    <div class="row2">
+      <div class="swatch"><div class="chip" style="background:#1B1D2E">charcoal</div><div class="name">Charcoal</div><div class="hex">#1B1D2E</div></div>
+      <div class="swatch"><div class="chip" style="background:#D6D1C5;color:#1B1D2E">border-st</div><div class="name">Border Strong</div><div class="hex">#D6D1C5</div></div>
+      <div class="swatch"><div class="chip" style="background:#E8E4DC;color:#1B1D2E">border</div><div class="name">Border</div><div class="hex">#E8E4DC</div></div>
+      <div class="swatch"><div class="chip" style="background:#F5F3EE;color:#1B1D2E">bg-alt</div><div class="name">Bg Alt</div><div class="hex">#F5F3EE</div></div>
+      <div class="swatch"><div class="chip" style="background:#FBFAF7;color:#1B1D2E">bg</div><div class="name">Bg</div><div class="hex">#FBFAF7</div></div>
+    </div>
+  </div>
+</div></body></html>

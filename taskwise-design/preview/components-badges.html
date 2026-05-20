@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Badges</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 9999px; font-family: var(--font-body); font-weight: 600; font-size: 12px; border: 1px solid transparent; }
+  .badge .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .badge-primary { background: var(--color-primary-50); color: var(--color-primary-darker); border-color: var(--color-primary-100); }
+  .badge-success { background: var(--color-success-50); color: #2A6F4F; }
+  .badge-warning { background: var(--color-warning-50); color: #A06A1A; }
+  .badge-error { background: var(--color-error-50); color: #9B3838; }
+  .badge-neutral { background: var(--color-bg-alt); color: var(--color-text-body); border-color: var(--color-border); }
+  .badge-accent { background: var(--color-accent-50); color: #A06A1A; border-color: var(--color-accent-100); }
+  .badge-solid { background: var(--color-primary); color: white; }
+  .row-b { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .lbl-b { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); width: 90px; flex-shrink: 0; }
+</style></head>
+<body><div class="card">
+  <div class="row-b"><span class="lbl-b">Status</span>
+    <span class="badge badge-success"><span class="dot" style="background:#3E9B6E"></span>Live</span>
+    <span class="badge badge-warning"><span class="dot" style="background:#E6A23C"></span>Pending</span>
+    <span class="badge badge-error"><span class="dot" style="background:#D85959"></span>Failed</span>
+    <span class="badge badge-neutral"><span class="dot" style="background:#8B8DA0"></span>Draft</span>
+  </div>
+  <div class="row-b"><span class="lbl-b">Tags</span>
+    <span class="badge badge-primary">Finance</span>
+    <span class="badge badge-primary">Operations</span>
+    <span class="badge badge-primary">HR</span>
+    <span class="badge badge-accent">New</span>
+    <span class="badge badge-solid">PRO</span>
+  </div>
+  <div class="row-b"><span class="lbl-b">Counters</span>
+    <span class="badge badge-neutral">180+ connectors</span>
+    <span class="badge badge-neutral">SOC 2 Type II</span>
+    <span class="badge badge-neutral">GDPR ready</span>
+  </div>
+</div></body></html>

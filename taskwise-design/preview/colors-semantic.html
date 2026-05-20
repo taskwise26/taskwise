@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Semantic colors</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .sem { padding: 16px; border-radius: 16px; border: 1px solid var(--color-border); display: flex; flex-direction: column; gap: 10px; background: var(--color-surface); }
+  .sem .dot { width: 28px; height: 28px; border-radius: 10px; }
+  .sem .label { font-family: var(--font-display); font-weight: 600; font-size: 14px; color: var(--color-text); }
+  .sem .hex { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-muted); }
+  .sem .pair { display: flex; gap: 8px; align-items: center; }
+  .sem .pair .tint { flex: 1; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-family: var(--font-mono); font-weight: 600; }
+</style></head>
+<body><div class="card">
+  <div class="grid">
+    <div class="sem">
+      <div class="pair"><div class="dot" style="background:#3E9B6E"></div><div><div class="label">Success</div><div class="hex">#3E9B6E</div></div></div>
+      <div class="pair"><div class="tint" style="background:#E6F3EC;color:#2A6F4F">tint 50</div></div>
+    </div>
+    <div class="sem">
+      <div class="pair"><div class="dot" style="background:#E6A23C"></div><div><div class="label">Warning</div><div class="hex">#E6A23C</div></div></div>
+      <div class="pair"><div class="tint" style="background:#FBF1DD;color:#A06A1A">tint 50</div></div>
+    </div>
+    <div class="sem">
+      <div class="pair"><div class="dot" style="background:#D85959"></div><div><div class="label">Error</div><div class="hex">#D85959</div></div></div>
+      <div class="pair"><div class="tint" style="background:#F9E5E5;color:#9B3838">tint 50</div></div>
+    </div>
+    <div class="sem">
+      <div class="pair"><div class="dot" style="background:#4B52CC"></div><div><div class="label">Info</div><div class="hex">#4B52CC</div></div></div>
+      <div class="pair"><div class="tint" style="background:#EEF0FB;color:#2A2F88">tint 50</div></div>
+    </div>
+  </div>
+  <div style="color:var(--color-text-muted);font-size:13px;line-height:1.5;border-top:1px solid var(--color-divider);padding-top:14px">
+    Muted, low-saturation semantic colors. Nothing screams — the brand stays calm even when surfacing errors.
+  </div>
+</div></body></html>

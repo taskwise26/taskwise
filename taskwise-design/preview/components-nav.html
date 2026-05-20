@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nav bar</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  html, body { background: var(--color-bg); }
+  .card { padding: 24px; }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 16px; background: rgba(251, 250, 247, 0.92); backdrop-filter: blur(16px); border: 1px solid var(--color-border); border-radius: 14px; box-shadow: var(--shadow-sm); }
+  .nav .left { display: flex; align-items: center; gap: 24px; flex-shrink: 1; min-width: 0; }
+  .nav .left img { flex-shrink: 0; }
+  .links { display: flex; gap: 16px; align-items: center; flex-wrap: nowrap; }
+  .links a { color: var(--color-text-body); font-size: 13px; font-weight: 500; text-decoration: none; white-space: nowrap; }
+  .links a:hover { color: var(--color-text); }
+  .right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .btn { padding: 7px 12px; border-radius: 10px; font-family: var(--font-body); font-weight: 600; font-size: 12px; border: 1px solid transparent; cursor: pointer; white-space: nowrap; }
+  .btn-ghost { background: transparent; color: var(--color-text); }
+  .btn-primary { background: var(--color-primary); color: white; box-shadow: var(--shadow-primary); display: inline-flex; align-items: center; gap: 6px; }
+</style></head>
+<body><div class="card">
+  <div class="nav">
+    <div class="left">
+      <img src="../assets/logo-horizontal.svg" height="24">
+      <div class="links">
+        <a>Product</a><a>Solutions</a><a>Connectors</a><a>Pricing</a><a>Docs</a>
+      </div>
+    </div>
+    <div class="right">
+      <button class="btn btn-ghost">Sign in</button>
+      <button class="btn btn-primary">Book a demo
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</div></body></html>

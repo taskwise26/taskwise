@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" width="260" height="64" role="img" aria-label="TaskWise">
+  
+  <path d="M32 6 C46 6 58 16 58 32 C58 48 46 58 32 58 C18 58 6 48 6 32 C6 16 18 6 32 6 Z" fill="#4B52CC"></path>
+  <g fill="none" stroke="#FBFAF7" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 30 L23 41 L32 24"></path>
+    <path d="M32 30 L39 41 L48 22"></path>
+  </g>
+  <circle cx="48" cy="22" r="2.4" fill="#F2A93B"></circle>
+
+  
+  <text x="76" y="42" font-family="&#39;Bricolage Grotesque&#39;, system-ui, sans-serif" font-weight="600" font-size="26" letter-spacing="-0.6" fill="#1B1D2E">TaskWise</text>
+</svg>

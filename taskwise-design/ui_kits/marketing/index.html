@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TaskWise — Quietly automate the work that drains your team</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="demos.css">
+</head>
+<body>
+
+<!-- ============== NAV ============== -->
+<nav class="nav" data-screen-label="01 Marketing Home">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="#" class="nav-logo"><img src="../../assets/logo-horizontal.svg" alt="TaskWise"></a>
+      <div class="nav-links">
+        <a href="#product">Product</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Docs</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="btn btn-primary btn-sm" data-scroll="#contact">Book a demo
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-content">
+    <h1>
+      Quietly automate the work that <span class="accent-amber">drains your team.</span>
+    </h1>
+    <p class="lede">
+      Invoices, approvals, document checks, and 180+ integrations — orchestrated in one place,
+      with the audit trail your finance team actually wants.
+    </p>
+
+  </div>
+
+  <!-- Hero workflow demo -->
+  <div class="hero-demo-wrap">
+    <div class="hero-demo">
+      <div class="dframe">
+        <div class="dframe-header">
+          <div class="dframe-dots"><span></span><span></span><span></span></div>
+          <div class="dframe-url">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            app.taskwise.com / workflows / invoice-reconcile
+          </div>
+          <div style="display:flex;gap:6px;font-size:11px;color:var(--color-text-muted);align-items:center">
+            <span class="hwf-status" style="position:static;padding:4px 10px"><span class="live-dot"></span>Live</span>
+          </div>
+        </div>
+        <div class="hero-workflow" data-demo="workflow">
+          <div class="hwf-side">
+            <div class="side-label">Workflows</div>
+            <div class="side-item active">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>
+              Invoice reconcile
+              <span class="dot live"></span>
+            </div>
+            <div class="side-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+              Vendor onboarding
+            </div>
+            <div class="side-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Customer renewals
+            </div>
+            <div class="side-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              PO approvals
+            </div>
+            <div class="side-label" style="margin-top:14px">Recent runs</div>
+            <div style="display:flex;flex-direction:column;gap:4px;font-family:var(--font-mono);font-size:10px;color:var(--color-text-muted);padding-left:10px">
+              <div>✓ 14:32 · INV-08412</div>
+              <div>✓ 14:31 · INV-08411</div>
+              <div>✓ 14:29 · INV-08410</div>
+              <div>✓ 14:28 · INV-08409</div>
+            </div>
+          </div>
+          <div class="hwf-canvas">
+            <svg class="wf-svg" preserveAspectRatio="none" aria-hidden="true"></svg>
+            <!-- Nodes — DOM order matches flow: trigger → OCR → PO match → branch → Slack -->
+            <div class="wf-node" data-pos="tl">
+              <div class="ic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <div>New invoice email</div>
+                <div class="meta">Trigger · Gmail</div>
+              </div>
+              <div class="tick">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+              </div>
+            </div>
+            <div class="wf-node" data-pos="tc">
+              <div class="ic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/></svg>
+              </div>
+              <div>
+                <div>Extract fields</div>
+                <div class="meta">OCR Inspector</div>
+              </div>
+              <div class="tick">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+              </div>
+            </div>
+            <div class="wf-node" data-pos="tr">
+              <div class="ic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <div>Match PO in NetSuite</div>
+                <div class="meta">Lookup · NetSuite</div>
+              </div>
+              <div class="tick">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+              </div>
+            </div>
+            <div class="wf-node" data-pos="br">
+              <div class="ic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+              </div>
+              <div>
+                <div>Branch · amount > $5k</div>
+                <div class="meta">Logic</div>
+              </div>
+              <div class="tick">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+              </div>
+            </div>
+            <div class="wf-node" data-pos="bl">
+              <div class="ic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div>
+                <div>Request approval in Slack</div>
+                <div class="meta">Action · Slack</div>
+              </div>
+              <div class="tick">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+              </div>
+            </div>
+
+            <div class="hwf-status">
+              <span class="live-dot"></span>
+              <span><strong style="color:var(--color-text);font-weight:600">3,412 invoices</strong> processed today · avg 6.2s/run</span>
+              <span class="runs">$847K reconciled</span>
+              <span style="margin-left:auto">SOC 2 audit log</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== FEATURES (6-card grid) ============== -->
+<section id="product">
+  <div class="section-head">
+    <div class="eyebrow-text">One platform</div>
+    <h2>The automation backbone for finance and operations.</h2>
+    <p class="lede">Six capabilities, one orchestration layer, the same audit trail across every step.</p>
+  </div>
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M8 13h8M8 17h5"/></svg>
+      </div>
+      <h3>Invoice & quotation automation</h3>
+      <p>Generate branded invoices and quotes from any trigger, dispatch them through your billing stack, and reconcile against your ERP.</p>
+      <a href="#" class="feature-link">See workflow templates
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/></svg>
+      </div>
+      <h3>OCR document verification</h3>
+      <p>Extract structured fields from PDFs, scans, and phone photos. Validate against your records before anything moves downstream.</p>
+      <a href="#" class="feature-link">How OCR Inspector works
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2M12 11h4M12 16h4M8 11h.01M8 16h.01"/></svg>
+      </div>
+      <h3>Automated forms</h3>
+      <p>Branded intake forms with conditional logic, file uploads, and signature capture — wired into the rest of your stack.</p>
+      <a href="#" class="feature-link">Browse the form gallery
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6M15 2v6M12 17v5M18 14a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8h12z"/></svg>
+      </div>
+      <h3>180+ connectors</h3>
+      <p>CRMs, accounting platforms, storage, messaging, identity. TaskWise plugs into the stack you already run — no custom dev.</p>
+      <a href="#" class="feature-link">View the directory
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h3>Messaging across channels</h3>
+      <p>Send approvals, alerts, and updates to WhatsApp, Slack, Teams, or Email — with consistent templates and audit-ready logs.</p>
+      <a href="#" class="feature-link">Channel reference
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>
+      </div>
+      <h3>Workflow orchestration</h3>
+      <p>A visual builder that ties everything together — conditional logic, retries, approvals, and human-in-the-loop steps.</p>
+      <a href="#" class="feature-link">See the canvas
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== OCR DEMO SECTION ============== -->
+<section class="section-alt">
+  <div class="demo-section">
+    <div class="demo-text">
+      <div class="eyebrow-text">OCR Inspector</div>
+      <h2>Reads the messy stuff. Validates against your records. Flags what's off.</h2>
+      <p>Crumpled receipts, blurry phone photos, multi-page PDFs — TaskWise extracts the fields you need, looks them up against your ERP or CRM, and won't move anything downstream that doesn't match.</p>
+      <ul class="demo-bullets">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>43 supported document templates out of the box</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Confidence scoring on every field, with low-confidence routing</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Side-by-side review when a human needs to look</li>
+      </ul>
+      <button class="btn btn-secondary">See OCR templates
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+    <div class="demo-panel">
+      <div class="dframe">
+        <div class="dframe-header">
+          <div class="dframe-dots"><span></span><span></span><span></span></div>
+          <div class="dframe-url">OCR Inspector · invoice-2024-08-INV-08412.pdf</div>
+        </div>
+        <div class="ocr-demo" data-demo="ocr">
+          <div class="ocr-doc">
+            <div class="ocr-doc-paper">
+              <h6 data-ocr="vendor">Acme Logistics, Inc.</h6>
+              <div class="doc-meta">2847 Industrial Way · Oakland, CA 94607<br>billing@acmelogistics.example</div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:10px">
+                <div>
+                  <div style="font-size:8px;color:#A8A9B8;margin-bottom:2px">BILL TO</div>
+                  <div style="font-size:10px;color:var(--color-text)">Northbound Logistics<br>Attn: Accounts Payable</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-size:8px;color:#A8A9B8;margin-bottom:2px">INVOICE</div>
+                  <div data-ocr="invoice-num" style="font-size:10px;color:var(--color-text);font-weight:600;display:inline-block">INV-08412</div>
+                  <div style="font-size:8px;color:#A8A9B8;margin-top:6px">DATE</div>
+                  <div data-ocr="invoice-date" style="font-size:10px;color:var(--color-text);display:inline-block">Aug 14, 2024</div>
+                </div>
+              </div>
+              <div class="ocr-row"><span>Cross-dock services (units)</span><span>120 × $48.00</span></div>
+              <div class="ocr-row"><span>Pallet handling</span><span>$420.00</span></div>
+              <div class="ocr-row"><span>Detention fees (2 hrs)</span><span>$185.00</span></div>
+              <div class="ocr-row total"><span>Total due</span><span data-ocr="total">$6,365.00</span></div>
+              <div style="font-size:8px;color:#A8A9B8;margin-top:10px">Payment terms: NET 30 · <span data-ocr="po" style="font-weight:600;color:var(--color-text)">PO# PO-2024-9921</span></div>
+            </div>
+            <div class="ocr-scan-line"></div>
+          </div>
+          <div class="ocr-fields">
+            <h6><span class="live-dot"></span>Extracting · 5 fields</h6>
+            <div class="ocr-field" data-target="vendor"><div><div class="lbl">Vendor</div><div class="val">Acme Logistics, Inc.</div></div><span class="conf">99%</span></div>
+            <div class="ocr-field" data-target="invoice-num"><div><div class="lbl">Invoice number</div><div class="val">INV-08412</div></div><span class="conf">100%</span></div>
+            <div class="ocr-field" data-target="invoice-date"><div><div class="lbl">Invoice date</div><div class="val">2024-08-14</div></div><span class="conf">98%</span></div>
+            <div class="ocr-field" data-target="total"><div><div class="lbl">Total amount</div><div class="val">$6,365.00 USD</div></div><span class="conf">99%</span></div>
+            <div class="ocr-field warn" data-target="po"><div><div class="lbl">Purchase order</div><div class="val">PO-2024-9921</div></div><span class="conf">87% · review</span></div>
+            <div class="ocr-status">
+              <div class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div>
+              <div>Matched PO in NetSuite · routing to approval</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== MESSAGING DEMO ============== -->
+<section>
+  <div class="demo-section reverse">
+    <div class="demo-panel">
+      <div class="dframe">
+        <div class="dframe-header">
+          <div class="dframe-dots"><span></span><span></span><span></span></div>
+          <div class="dframe-url">Messaging · approval routed to #finance-approvals + WhatsApp</div>
+        </div>
+        <div class="msg-demo" data-demo="messaging">
+          <div class="msg-channel slack">
+            <div class="msg-channel-header">
+              <div class="ch-mark">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.27 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.833 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.833 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.833 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.833zm0 1.27a2.527 2.527 0 0 1 2.521 2.522 2.527 2.527 0 0 1-2.521 2.52H2.522A2.527 2.527 0 0 1 0 8.834a2.527 2.527 0 0 1 2.522-2.522h6.311zm10.122 2.522a2.528 2.528 0 0 1 2.522-2.522A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.52h-2.523V8.834zm-1.268 0a2.527 2.527 0 0 1-2.521 2.52 2.527 2.527 0 0 1-2.522-2.52V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.522 2.522v6.312zm-2.522 10.122a2.528 2.528 0 0 1 2.522 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.522-2.522v-2.522h2.522zm0-1.268a2.527 2.527 0 0 1-2.522-2.522 2.527 2.527 0 0 1 2.522-2.521h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.522h-6.313z"/></svg>
+              </div>
+              #finance-approvals
+            </div>
+            <div class="msg-stream">
+              <div class="msg bot">
+                <div class="avatar">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>
+                </div>
+                <div class="body">
+                  <div class="name">TaskWise <span class="bot-pill">BOT</span><span class="time">14:32</span></div>
+                  <div class="text">New invoice over $5k needs your approval:</div>
+                  <div class="msg-card">
+                    <div class="mc-row"><span>Vendor</span><span class="v">Acme Logistics</span></div>
+                    <div class="mc-row"><span>Amount</span><span class="v">$6,365.00</span></div>
+                    <div class="mc-row"><span>PO</span><span class="v">PO-2024-9921 ✓</span></div>
+                    <div class="mc-actions">
+                      <button class="approve">Approve</button>
+                      <button class="reject">Reject</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="msg user1">
+                <div class="avatar">PT</div>
+                <div class="body">
+                  <div class="name">Priya Tandon<span class="time">14:34</span></div>
+                  <div class="text">Approved. Already booked this PO last week.</div>
+                </div>
+              </div>
+              <div class="msg bot">
+                <div class="avatar">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div class="body">
+                  <div class="name">TaskWise <span class="bot-pill">BOT</span><span class="time">14:34</span></div>
+                  <div class="text">Approved by Priya. Posting to NetSuite and notifying vendor.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="msg-channel wapp">
+            <div class="msg-channel-header">
+              <div class="ch-mark">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C9.9 9 9.3 7.5 9 6.9c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
+              </div>
+              WhatsApp · Vendor
+            </div>
+            <div class="msg-stream">
+              <div class="msg bot">
+                <div class="avatar">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>
+                </div>
+                <div class="body">
+                  <div class="name">TaskWise <span class="bot-pill">AUTO</span><span class="time">14:35</span></div>
+                  <div class="text">Hi Acme team — invoice INV-08412 ($6,365.00) has been approved and is scheduled for payment on Sep 13.</div>
+                </div>
+              </div>
+              <div class="msg user2">
+                <div class="avatar">AC</div>
+                <div class="body">
+                  <div class="name">Acme Billing<span class="time">14:38</span></div>
+                  <div class="text">Thanks — confirmed on our side.</div>
+                </div>
+              </div>
+              <div class="msg bot">
+                <div class="avatar">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div class="body">
+                  <div class="name">TaskWise <span class="bot-pill">AUTO</span><span class="time">14:38</span></div>
+                  <div class="text">Logged to audit trail · run #INV-08412-RC9</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-text">
+      <div class="eyebrow-text">Messaging</div>
+      <h2>Talk to your team and your vendors in the channels they already live in.</h2>
+      <p>Route approvals to Slack or Teams. Send transactional updates over WhatsApp or Email. Every message is templated, logged, and reversible.</p>
+      <ul class="demo-bullets">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Native Slack, Teams, WhatsApp Business, and SMTP/IMAP support</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Interactive approval buttons in Slack and Teams</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Localised templates with version control and audit log</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SOLUTIONS ============== -->
+<section id="solutions">
+  <div class="section-head">
+    <div class="eyebrow-text">Solutions by team</div>
+    <h2>Built for the teams who care most about the audit trail.</h2>
+  </div>
+  <div class="solutions">
+    <div class="solution">
+      <div class="solution-num">01 / FINANCE</div>
+      <h4>AP automation</h4>
+      <p>Capture, code, and reconcile invoices end-to-end. Hand off the exceptions.</p>
+    </div>
+    <div class="solution">
+      <div class="solution-num">02 / OPERATIONS</div>
+      <h4>Vendor onboarding</h4>
+      <p>Forms, doc verification, sanction-list checks, and contract dispatch in one flow.</p>
+    </div>
+    <div class="solution">
+      <div class="solution-num">03 / SALES</div>
+      <h4>Quote-to-cash</h4>
+      <p>Generate branded quotes, route approvals, and post to your billing platform.</p>
+    </div>
+    <div class="solution">
+      <div class="solution-num">04 / IT</div>
+      <h4>Joiners & leavers</h4>
+      <p>Provision and de-provision access across your SaaS stack on a single trigger.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CONTACT / BOOK A DEMO ============== -->
+<section id="contact" class="section-alt">
+  <div class="contact-panel">
+    <div class="contact-left">
+      <div class="eyebrow-text" style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;color:var(--color-primary);margin-bottom:12px">Book a demo</div>
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.875rem,2.5vw + 1rem,2.5rem);line-height:1.1;letter-spacing:-0.02em;font-weight:500;color:var(--color-text);margin:0 0 16px">Quieter operations are a 20-minute walkthrough away.</h2>
+      <p style="font-size:16px;line-height:1.6;color:var(--color-text-body);margin:0 0 24px">Tell us what drains your team. A TaskWise engineer will get back within one business day with what we'd automate first — no slides, no pressure.</p>
+      <ul class="contact-bullets">
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+          Free, no commitment
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+          30 minutes with a solution engineer
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+          Singapore-based · response within 1 business day
+        </li>
+      </ul>
+      <div class="contact-meta">
+        <div class="meta-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          hello@taskwise.sg
+        </div>
+        <div class="meta-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +65 6123 4567
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="event.preventDefault(); this.classList.add('submitted');" novalidate>
+      <div class="field">
+        <label for="cf-name">Your name <span class="req">*</span></label>
+        <input id="cf-name" class="input" type="text" placeholder="Jane Tan" required>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="cf-email">Work email <span class="req">*</span></label>
+          <input id="cf-email" class="input" type="email" placeholder="you@company.com.sg" required>
+        </div>
+        <div class="field">
+          <label for="cf-phone">Contact number <span class="req">*</span></label>
+          <input id="cf-phone" class="input" type="tel" placeholder="+65 9XXX XXXX" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cf-company">Company</label>
+        <input id="cf-company" class="input" type="text" placeholder="Your company">
+      </div>
+      <div class="field">
+        <label for="cf-ask">What would you like to automate? <span class="req">*</span></label>
+        <textarea id="cf-ask" class="input" rows="4" placeholder="e.g. We process ~2,000 supplier invoices a month and approvals are spread across email and WhatsApp." required></textarea>
+      </div>
+      <button class="btn btn-primary btn-lg contact-submit" type="submit">Request demo
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+      <div class="contact-privacy">By submitting, you agree to TaskWise contacting you about this enquiry. See our <a href="#">privacy notice</a>.</div>
+      <div class="contact-success" role="status">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+        Thanks — we'll be in touch within one business day.
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px">
+          <img src="../../assets/logo-mark.svg" width="32" height="32">
+          <span style="font-family:var(--font-display);font-weight:600;font-size:22px;color:white;letter-spacing:-0.01em">TaskWise</span>
+        </div>
+        <p>The automation backbone for finance and operations teams who care about the audit trail.</p>
+        <div class="social">
+          <a href="#" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.21c-3.34.72-4.05-1.43-4.05-1.43-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.41 1.02.01 2.04.14 3 .41 2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.82 5.63-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.83.58A12.001 12.001 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#">Workflow builder</a></li>
+          <li><a href="#">OCR Inspector</a></li>
+          <li><a href="#">Forms</a></li>
+          <li><a href="#">Messaging</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Solutions</h5>
+        <ul>
+          <li><a href="#">AP automation</a></li>
+          <li><a href="#">Vendor onboarding</a></li>
+          <li><a href="#">Quote-to-cash</a></li>
+          <li><a href="#">Joiners & leavers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Customers</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="#">Docs</a></li>
+          <li><a href="#">Changelog</a></li>
+          <li><a href="#">Status</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 TaskWise, Inc. All rights reserved.</div>
+      <div class="legal-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+        <a href="#">SOC 2 report</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="demos.js"></script>
+</body>
+</html>

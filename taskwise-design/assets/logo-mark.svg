@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="TaskWise">
+  
+  <path d="M32 2 C50 2 62 14 62 32 C62 50 50 62 32 62 C14 62 2 50 2 32 C2 14 14 2 32 2 Z" fill="#4B52CC"></path>
+  
+  <g fill="none" stroke="#FBFAF7" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round">
+    
+    <path d="M14 28 L22 42 L32 22"></path>
+    
+    <path d="M32 28 L40 42 L50 20"></path>
+  </g>
+  
+  <circle cx="50" cy="20" r="2.8" fill="#F2A93B"></circle>
+</svg>

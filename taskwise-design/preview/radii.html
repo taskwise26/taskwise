@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Radii</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+  .r { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .r .box { width: 76px; height: 76px; background: var(--color-primary-50); border: 1px solid var(--color-primary-100); }
+  .r .lbl { font-family: var(--font-mono); font-size: 11px; color: var(--color-text); }
+  .r .meta { font-family: var(--font-mono); font-size: 10px; color: var(--color-text-muted); }
+</style></head>
+<body><div class="card">
+  <div class="grid">
+    <div class="r"><div class="box" style="border-radius:6px"></div><div class="lbl">xs</div><div class="meta">6px</div></div>
+    <div class="r"><div class="box" style="border-radius:8px"></div><div class="lbl">sm</div><div class="meta">8px</div></div>
+    <div class="r"><div class="box" style="border-radius:12px"></div><div class="lbl">md</div><div class="meta">12px · buttons</div></div>
+    <div class="r"><div class="box" style="border-radius:20px"></div><div class="lbl">lg</div><div class="meta">20px · cards</div></div>
+    <div class="r"><div class="box" style="border-radius:28px"></div><div class="lbl">xl</div><div class="meta">28px · panels</div></div>
+    <div class="r"><div class="box" style="border-radius:9999px"></div><div class="lbl">full</div><div class="meta">pill</div></div>
+  </div>
+  <div style="border-top:1px solid var(--color-divider);padding-top:14px;font-size:13px;color:var(--color-text-muted);line-height:1.5">
+    Generous radii are the brand's most distinctive geometric move. Never use right angles on a surface a user can interact with.
+  </div>
+</div></body></html>
