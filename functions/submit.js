@@ -21,7 +21,7 @@ export async function onRequestPost(context) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'website@taskwise.sg',
+      from: 'TaskWise <onboarding@resend.dev>',
       to: 'info@taskwise.sg',
       reply_to: email,
       subject: `New enquiry from ${name}${company ? ` (${company})` : ''}`,
