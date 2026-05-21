@@ -328,6 +328,7 @@ section{padding:clamp(72px,10vw,112px) 0}
   .wf-svg{display:none}
   .wf-node{position:static;width:auto;margin-left:0}
   .wf-node[data-pos="tl"],.wf-node[data-pos="tc"],.wf-node[data-pos="tr"],.wf-node[data-pos="br"],.wf-node[data-pos="bl"]{top:auto;left:auto;right:auto;bottom:auto;margin-left:0}
+  .wf-node .tick{right:8px;top:8px}
   .hwf-status{position:static;margin-top:4px;border-radius:8px}
 }
 </style>
@@ -381,7 +382,7 @@ section{padding:clamp(72px,10vw,112px) 0}
           <div class="dframe-dots"><span></span><span></span><span></span></div>
           <div class="dframe-url">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            app.taskwise.sg / workflows / it-access-provisioning
+            app.taskwise.sg / workflows / employee-onboarding
           </div>
           <div style="display:flex;gap:6px;font-size:11px;color:var(--color-text-muted);align-items:center">
             <span class="hwf-status" style="position:static;padding:4px 10px"><span class="live-dot"></span>Live</span>
@@ -392,16 +393,16 @@ section{padding:clamp(72px,10vw,112px) 0}
             <div class="side-label">Workflows</div>
             <div class="side-item active">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-              Access provisioning
+              Employee onboarding
               <span class="dot live"></span>
             </div>
             <div class="side-item">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
-              Patch deployment
+              Vendor approval
             </div>
             <div class="side-item">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-              Asset onboarding
+              Expense claim
             </div>
             <div class="side-item">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
@@ -422,8 +423,8 @@ section{padding:clamp(72px,10vw,112px) 0}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               </div>
               <div>
-                <div>New IT request</div>
-                <div class="meta">Trigger &middot; ServiceNow</div>
+                <div>New request</div>
+                <div class="meta">Trigger &middot; Intake form</div>
               </div>
               <div class="tick"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div>
             </div>
@@ -432,8 +433,8 @@ section{padding:clamp(72px,10vw,112px) 0}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               </div>
               <div>
-                <div>Verify identity</div>
-                <div class="meta">Lookup &middot; Azure AD</div>
+                <div>Verify requester</div>
+                <div class="meta">Lookup &middot; Directory</div>
               </div>
               <div class="tick"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div>
             </div>
@@ -442,8 +443,8 @@ section{padding:clamp(72px,10vw,112px) 0}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
               </div>
               <div>
-                <div>Check access policy</div>
-                <div class="meta">Compliance &middot; Okta</div>
+                <div>Check policy</div>
+                <div class="meta">Compliance &middot; Policy engine</div>
               </div>
               <div class="tick"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div>
             </div>
@@ -462,8 +463,8 @@ section{padding:clamp(72px,10vw,112px) 0}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
               </div>
               <div>
-                <div>Provision access</div>
-                <div class="meta">Action &middot; Azure AD</div>
+                <div>Fulfil request</div>
+                <div class="meta">Action &middot; Connected system</div>
               </div>
               <div class="tick"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div>
             </div>
