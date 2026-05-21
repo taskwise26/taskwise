@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TaskWise — IT Automation for Enterprises</title>
-<meta name="description" content="Automate IT service requests, provisioning, compliance, and incident response. 180+ enterprise integrations. Built for enterprise IT teams in Singapore.">
+<title>TaskWise — Workflow Automation for Enterprises</title>
+<meta name="description" content="Automate service requests, approvals, provisioning, and compliance across IT, Finance, HR, and Operations. 180+ enterprise integrations. Built for enterprise teams in Singapore.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M32 6 C46 6 58 16 58 32 C58 48 46 58 32 58 C18 58 6 48 6 32 C6 16 18 6 32 6 Z' fill='%234B52CC'/><g fill='none' stroke='%23FBFAF7' stroke-width='4.6' stroke-linecap='round' stroke-linejoin='round'><path d='M16 30 L23 41 L32 24'/><path d='M32 30 L39 41 L48 22'/></g><circle cx='48' cy='22' r='2.4' fill='%23F2A93B'/></svg>">
@@ -86,7 +86,7 @@ a:hover{color:var(--color-primary-dark);text-decoration:underline;text-underline
 .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 8px;background:white;border:1px solid var(--color-border);border-radius:9999px;font-size:13px;font-weight:500;color:var(--color-text-body);box-shadow:var(--shadow-sm);margin-bottom:24px}
 .eyebrow-pill{background:var(--color-accent);color:var(--color-charcoal);font-size:11px;font-weight:700;padding:2px 8px;border-radius:9999px;letter-spacing:.04em}
 .hero h1{font-family:var(--font-display);font-size:clamp(2.5rem,5.5vw + .5rem,4.5rem);line-height:1.04;letter-spacing:-.025em;font-weight:500;color:var(--color-text);margin:0 0 24px;text-wrap:balance}
-.accent-amber{position:relative;white-space:nowrap}
+.accent-amber{position:relative}
 .accent-amber::after{content:'';position:absolute;left:-2px;right:-2px;bottom:4px;height:12px;background:var(--color-accent);opacity:.4;z-index:-1;border-radius:4px}
 .hero .lede{font-size:clamp(1.0625rem,.5vw + 1rem,1.25rem);line-height:1.6;color:var(--color-text-body);max-width:660px;margin:0 auto 36px}
 .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
@@ -129,7 +129,7 @@ section{padding:clamp(72px,10vw,112px) 0}
 .demo-section{max-width:var(--container-max);margin:0 auto;padding:0 var(--space-6);display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:center}
 .demo-section.reverse{grid-template-columns:1.15fr 1fr}
 .demo-section.reverse>.demo-text{order:2}
-@media(max-width:900px){.demo-section,.demo-section.reverse{grid-template-columns:1fr;gap:36px}.demo-section.reverse>.demo-text{order:0}}
+@media(max-width:900px){.demo-section,.demo-section.reverse{grid-template-columns:1fr;gap:36px}.demo-section.reverse>.demo-text{order:0}.demo-section.reverse>.demo-panel{order:1}}
 .demo-text .eyebrow-text{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-primary);margin-bottom:12px}
 .demo-text h2{font-family:var(--font-display);font-size:clamp(1.75rem,2vw + 1rem,2.5rem);line-height:1.1;letter-spacing:-.02em;font-weight:500;margin:0 0 18px;text-wrap:balance}
 .demo-text p{font-size:16px;line-height:1.65;margin:0 0 12px}
@@ -322,6 +322,14 @@ section{padding:clamp(72px,10vw,112px) 0}
 .fade-up-1{animation-delay:80ms}
 .fade-up-2{animation-delay:160ms}
 .fade-up-3{animation-delay:240ms}
+
+@media(max-width:600px){
+  .hwf-canvas{display:flex;flex-direction:column;gap:10px;padding:16px;min-height:auto;background:var(--color-bg)}
+  .wf-svg{display:none}
+  .wf-node{position:static;width:auto;margin-left:0}
+  .wf-node[data-pos="tl"],.wf-node[data-pos="tc"],.wf-node[data-pos="tr"],.wf-node[data-pos="br"],.wf-node[data-pos="bl"]{top:auto;left:auto;right:auto;bottom:auto;margin-left:0}
+  .hwf-status{position:static;margin-top:4px;border-radius:8px}
+}
 </style>
 </head>
 <body>
@@ -342,7 +350,6 @@ section{padding:clamp(72px,10vw,112px) 0}
       </a>
       <div class="nav-links">
         <a href="#product">Product</a>
-        <a href="#solutions">Solutions</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -360,10 +367,10 @@ section{padding:clamp(72px,10vw,112px) 0}
   <div class="hero-dots"></div>
   <div class="hero-content">
     <h1 class="fade-up">
-      Quietly automate the IT work that <span class="accent-amber">slows your team down.</span>
+      Quietly automate the work that <span class="accent-amber">slows your team down.</span>
     </h1>
     <p class="lede fade-up fade-up-2">
-      Service requests, provisioning, compliance checks, and 180+ enterprise integrations — orchestrated in one platform, with the audit trail your security team needs.
+      Approvals, provisioning, compliance checks, and 180+ integrations — orchestrated in one platform, with the full audit trail every team needs.
     </p>
   </div>
 
@@ -462,7 +469,7 @@ section{padding:clamp(72px,10vw,112px) 0}
             </div>
             <div class="hwf-status">
               <span class="live-dot"></span>
-              <span><strong style="color:var(--color-text);font-weight:600">1,247 IT requests</strong> resolved today &middot; avg 8.4s/run</span>
+              <span><strong style="color:var(--color-text);font-weight:600">1,247 requests</strong> resolved today &middot; avg 8.4s/run</span>
               <span class="runs">SLA 99.8%</span>
               <span style="margin-left:auto">SOC 2 audit log</span>
             </div>
@@ -477,7 +484,7 @@ section{padding:clamp(72px,10vw,112px) 0}
 <section id="product">
   <div class="section-head">
     <div class="eyebrow-text">One platform</div>
-    <h2>The automation backbone for enterprise IT teams.</h2>
+    <h2>The automation backbone for enterprise teams.</h2>
     <p class="lede">Six capabilities, one orchestration layer, the same audit trail across every step.</p>
   </div>
   <div class="features">
@@ -485,9 +492,9 @@ section{padding:clamp(72px,10vw,112px) 0}
       <div class="feature-icon">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       </div>
-      <h3>IT service desk automation</h3>
-      <p>Route and resolve common requests automatically. Escalate exceptions to the right engineer — not everything to the inbox.</p>
-      <a href="#contact" class="feature-link">See workflow templates
+      <h3>Service request automation</h3>
+      <p>Route and resolve common requests automatically. Escalate exceptions to the right person — not everything to the inbox.</p>
+      <a href="#contact" class="feature-link">See request templates
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -495,8 +502,8 @@ section{padding:clamp(72px,10vw,112px) 0}
       <div class="feature-icon">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
       </div>
-      <h3>Device &amp; software provisioning</h3>
-      <p>Provision laptops, accounts, and licences on a single onboarding trigger. Revoke access on the same day someone leaves.</p>
+      <h3>Provisioning &amp; onboarding</h3>
+      <p>Provision accounts, tools, and access on a single onboarding trigger. Revoke everything on the same day someone leaves.</p>
       <a href="#contact" class="feature-link">How provisioning works
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
@@ -515,8 +522,8 @@ section{padding:clamp(72px,10vw,112px) 0}
       <div class="feature-icon">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
       </div>
-      <h3>Compliance &amp; patch management</h3>
-      <p>Schedule vulnerability scans, apply patches, and generate audit-ready compliance reports without manual co-ordination.</p>
+      <h3>Compliance &amp; auditing</h3>
+      <p>Schedule reviews, run automated checks, and generate audit-ready reports without manual co-ordination.</p>
       <a href="#contact" class="feature-link">Compliance templates
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
@@ -536,7 +543,7 @@ section{padding:clamp(72px,10vw,112px) 0}
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6M15 2v6M12 17v5M18 14a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8h12z"/></svg>
       </div>
       <h3>180+ enterprise integrations</h3>
-      <p>ServiceNow, Jira, Active Directory, Azure AD, AWS, GCP, Okta — TaskWise plugs into the stack your IT team already runs.</p>
+      <p>Slack, Teams, Jira, SAP, Workday, Salesforce, and more — TaskWise plugs into the tools your teams already use.</p>
       <a href="#contact" class="feature-link">View the directory
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
@@ -548,13 +555,13 @@ section{padding:clamp(72px,10vw,112px) 0}
 <section class="section-alt">
   <div class="demo-section">
     <div class="demo-text">
-      <div class="eyebrow-text">Asset Management</div>
-      <h2>Reads IT purchase documents. Validates against your CMDB. Flags discrepancies.</h2>
-      <p>Delivery notes, warranty cards, vendor invoices — TaskWise extracts asset details, matches them against your configuration database, and won't update your CMDB until everything checks out.</p>
+      <div class="eyebrow-text">Document Processing</div>
+      <h2>Reads purchase and delivery documents. Validates against your records. Flags discrepancies.</h2>
+      <p>Delivery notes, invoices, vendor contracts — TaskWise extracts key details, matches them against your system of record, and won't update anything until everything checks out.</p>
       <ul class="demo-bullets">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>43 supported IT document templates out of the box</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>43 supported document templates out of the box</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Confidence scoring on every extracted field, with low-confidence routing</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Side-by-side review when a technician needs to verify</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Side-by-side review when a human needs to verify</li>
       </ul>
       <button class="btn btn-secondary" data-scroll="#contact">See document templates
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -564,7 +571,7 @@ section{padding:clamp(72px,10vw,112px) 0}
       <div class="dframe">
         <div class="dframe-header">
           <div class="dframe-dots"><span></span><span></span><span></span></div>
-          <div class="dframe-url">OCR Inspector &middot; IT-PO-2024-08-DELL-48291.pdf</div>
+          <div class="dframe-url">OCR Inspector &middot; PO-2024-08-DELL-48291.pdf</div>
         </div>
         <div class="ocr-demo" data-demo="ocr">
           <div class="ocr-doc">
@@ -616,7 +623,7 @@ section{padding:clamp(72px,10vw,112px) 0}
       <div class="dframe">
         <div class="dframe-header">
           <div class="dframe-dots"><span></span><span></span><span></span></div>
-          <div class="dframe-url">Messaging &middot; approval routed to #it-approvals + #it-incidents</div>
+          <div class="dframe-url">Messaging &middot; approvals routed to #approvals + #incidents</div>
         </div>
         <div class="msg-demo" data-demo="messaging">
           <div class="msg-channel slack">
@@ -624,7 +631,7 @@ section{padding:clamp(72px,10vw,112px) 0}
               <div class="ch-mark">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.27 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.833 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.833 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.833 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.833zm0 1.27a2.527 2.527 0 0 1 2.521 2.522 2.527 2.527 0 0 1-2.521 2.52H2.522A2.527 2.527 0 0 1 0 8.834a2.527 2.527 0 0 1 2.522-2.522h6.311zm10.122 2.522a2.528 2.528 0 0 1 2.522-2.522A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.52h-2.523V8.834zm-1.268 0a2.527 2.527 0 0 1-2.521 2.52 2.527 2.527 0 0 1-2.522-2.52V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.522 2.522v6.312zm-2.522 10.122a2.528 2.528 0 0 1 2.522 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.522-2.522v-2.522h2.522zm0-1.268a2.527 2.527 0 0 1-2.522-2.522 2.527 2.527 0 0 1 2.522-2.521h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.522h-6.313z"/></svg>
               </div>
-              #it-approvals
+              #approvals
             </div>
             <div class="msg-stream">
               <div class="msg bot">
@@ -664,7 +671,7 @@ section{padding:clamp(72px,10vw,112px) 0}
               <div class="ch-mark">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.625 0H3.375A3.375 3.375 0 0 0 0 3.375v17.25A3.375 3.375 0 0 0 3.375 24h17.25A3.375 3.375 0 0 0 24 20.625V3.375A3.375 3.375 0 0 0 20.625 0zm-5.25 6.75a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zm2.25 10.5h-4.5v-.75a2.25 2.25 0 0 1 4.5 0v.75zM8.25 9.375a1.875 1.875 0 1 1 0 3.75 1.875 1.875 0 0 1 0-3.75zm3 8.25H5.25v-.75a3 3 0 0 1 6 0v.75z"/></svg>
               </div>
-              #it-incidents
+              #incidents
             </div>
             <div class="msg-stream">
               <div class="msg bot">
@@ -703,9 +710,9 @@ section{padding:clamp(72px,10vw,112px) 0}
       </div>
     </div>
     <div class="demo-text">
-      <div class="eyebrow-text">Incident &amp; Approval Flows</div>
-      <h2>Alert your on-call team in the channels they already use.</h2>
-      <p>Route access requests to #it-approvals in Slack. Send incident alerts to Teams. Every message is templated, logged, and reversible — with an escalation chain if no one responds.</p>
+      <div class="eyebrow-text">Notifications &amp; Approval Flows</div>
+      <h2>Route requests to the right team, in the channels they already use.</h2>
+      <p>Route approvals to the right Slack channel. Send alerts to Teams. Every message is templated, logged, and reversible — with an escalation chain if no one responds.</p>
       <ul class="demo-bullets">
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Native Slack, Teams, WhatsApp Business, and SMTP/IMAP support</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Interactive approval buttons — one click, full audit trail</li>
@@ -715,43 +722,13 @@ section{padding:clamp(72px,10vw,112px) 0}
   </div>
 </section>
 
-<!-- SOLUTIONS -->
-<section id="solutions" class="section-alt">
-  <div class="section-head">
-    <div class="eyebrow-text">Solutions by team</div>
-    <h2>Built for the IT teams who can't afford downtime.</h2>
-  </div>
-  <div class="solutions">
-    <div class="solution">
-      <div class="solution-num">01 / SERVICE DESK</div>
-      <h4>Ticket triage &amp; resolution</h4>
-      <p>Auto-route and auto-resolve tier-1 requests. Hand off the exceptions, not everything.</p>
-    </div>
-    <div class="solution">
-      <div class="solution-num">02 / INFRASTRUCTURE</div>
-      <h4>Provisioning &amp; change</h4>
-      <p>Spin up environments, manage change requests, and keep your CMDB accurate without manual updates.</p>
-    </div>
-    <div class="solution">
-      <div class="solution-num">03 / SECURITY</div>
-      <h4>Incident response &amp; compliance</h4>
-      <p>Trigger remediation playbooks, run access reviews, and generate compliance evidence on demand.</p>
-    </div>
-    <div class="solution">
-      <div class="solution-num">04 / IT OPERATIONS</div>
-      <h4>Joiners, movers &amp; leavers</h4>
-      <p>Provision and de-provision access across your entire SaaS stack on a single HR trigger.</p>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section id="contact" class="contact-section" style="padding:clamp(72px,10vw,112px) 0">
   <div class="contact-panel">
     <div class="contact-left">
       <div class="eyebrow-text">Book a demo</div>
-      <h2>Quieter IT operations are a 20-minute walkthrough away.</h2>
-      <p>Tell us what drains your IT team. A TaskWise engineer will get back within one business day with what we'd automate first — no slides, no pressure.</p>
+      <h2>Quieter operations are a 20-minute walkthrough away.</h2>
+      <p>Tell us what drains your team. A TaskWise engineer will get back within one business day with what we'd automate first — no slides, no pressure.</p>
       <ul class="contact-bullets">
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Free, no commitment</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>30 minutes with a solution engineer</li>
@@ -792,7 +769,7 @@ section{padding:clamp(72px,10vw,112px) 0}
       </div>
       <div class="field">
         <label for="cf-ask">What would you like to automate? <span class="req">*</span></label>
-        <textarea id="cf-ask" name="message" class="input" rows="4" placeholder="e.g. We handle ~500 IT service requests a month and provisioning new hires takes 2 days of manual work." required></textarea>
+        <textarea id="cf-ask" name="message" class="input" rows="4" placeholder="e.g. Our team handles ~500 requests a month and onboarding new hires takes days of manual work." required></textarea>
       </div>
       <button class="btn btn-primary btn-lg contact-submit" type="submit">Request demo
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -819,7 +796,7 @@ section{padding:clamp(72px,10vw,112px) 0}
           </svg>
           <span style="font-family:var(--font-display);font-weight:600;font-size:22px;color:white;letter-spacing:-.01em">TaskWise</span>
         </div>
-        <p>The automation backbone for enterprise IT teams who care about reliability and auditability.</p>
+        <p>The automation backbone for enterprise teams who care about reliability and auditability.</p>
         <div class="social">
           <a href="#" aria-label="LinkedIn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -840,12 +817,12 @@ section{padding:clamp(72px,10vw,112px) 0}
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Solutions</h5>
+        <h5>Use cases</h5>
         <ul>
-          <li><a href="#solutions">Ticket triage</a></li>
-          <li><a href="#solutions">Joiners &amp; leavers</a></li>
-          <li><a href="#solutions">Incident response</a></li>
-          <li><a href="#solutions">Patch management</a></li>
+          <li><a href="#product">Finance &amp; approvals</a></li>
+          <li><a href="#product">HR &amp; onboarding</a></li>
+          <li><a href="#product">Logistics &amp; ops</a></li>
+          <li><a href="#product">IT operations</a></li>
         </ul>
       </div>
       <div class="footer-col">
